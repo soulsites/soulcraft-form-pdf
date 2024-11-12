@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Soulcraft PDF Generator
- * Description: Generiert PDF Dateien aus verschiedenen Form Buildern
+ * Description: Generiert PDF Dateien aus verschiedenen Form Buildern (Ninja Forms, Elementor, CF7))
  * Version: 1.0.0
  * Author: Christian Wedel
  */
@@ -18,6 +18,7 @@ define('SOULCRAFT_PDF_URL', plugin_dir_url(__FILE__));
 
 require_once SOULCRAFT_PDF_PATH . 'vendor/autoload.php';
 
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
 // Core files
 require_once SOULCRAFT_PDF_PATH . 'inc/class-pdf-debug.php';
@@ -25,6 +26,8 @@ require_once SOULCRAFT_PDF_PATH . 'inc/class-pdf-base.php';
 require_once SOULCRAFT_PDF_PATH . 'inc/class-form-registry.php';
 require_once SOULCRAFT_PDF_PATH . 'inc/class-pdf-generator.php';
 require_once SOULCRAFT_PDF_PATH . 'inc/class-settings-page.php';
+
+
 
 class Soulcraft_PDF {
     private static $instance = null;
@@ -215,3 +218,12 @@ function soulcraft_pdf() {
 
 // Start the plugin
 add_action('plugins_loaded', 'soulcraft_pdf');
+
+$myUpdateChecker = PucFactory::buildUpdateChecker(
+    'https://github.com/soulsites/soulcraft-form-pdf.git',
+    __FILE__,
+    'soulcraft-form-pdf'
+);
+
+// Für private Repositories
+$myUpdateChecker->setAuthentication('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');

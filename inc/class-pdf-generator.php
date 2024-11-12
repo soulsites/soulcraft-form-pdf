@@ -17,9 +17,14 @@ class PDF_Generator extends FPDF {
 
     public function __construct() {
         parent::__construct();
-
+        $this->SetFont('helvetica', '', 11); // Standardschriftart setzen
         $this->SetMargins(self::MARGIN_LEFT, self::MARGIN_TOP, self::MARGIN_RIGHT);
         $this->SetAutoPageBreak(true, self::MARGIN_BOTTOM);
+
+        // Wichtig für UTF-8
+        if (method_exists($this, 'SetProtection')) {
+            $this->SetProtection(['print'], '', '');
+        }
 
         pdf_debug('PDF Generator initialized');
     }
@@ -105,9 +110,14 @@ class PDF_Generator extends FPDF {
 
     protected function normalize_text($text) {
         try {
-            if (mb_detect_encoding($text, 'UTF-8', true)) {
-                return iconv('UTF-8', 'windows-1252//TRANSLIT', $text);
+            // Zuerst sicherstellen, dass wir UTF-8 haben
+            if (!mb_check_encoding($text, 'UTF-8')) {
+                $text = utf8_encode($text);
             }
+
+            // Windows-1252 für FPDF
+            $text = iconv('UTF-8', 'CP1252//TRANSLIT//IGNORE', $text);
+
             return $text;
         } catch (Exception $e) {
             pdf_debug('Text normalization error', $e->getMessage());
@@ -162,6 +172,7 @@ class PDF_Generator extends FPDF {
         if (!empty($this->current_settings['show_metadata'])) {
             $this->add_metadata($form_data);
         }
+
     }
 
     private function generate_fields($fields) {
@@ -173,39 +184,53 @@ class PDF_Generator extends FPDF {
         $content_width = $this->GetPageWidth() - $this->lMargin - $this->rMargin - $label_width;
 
         foreach ($fields as $field) {
-            if (empty($field['value'])) continue;
+            // Überspringe leere Felder, aber NICHT Checkboxen
+            if (empty($field['value']) && $field['type'] !== 'checkbox') continue;
 
-            $value = is_array($field['value']) ? implode(', ', $field['value']) : $field['value'];
+            // Spezielle Behandlung für Checkboxen
+            if ($field['type'] === 'checkbox') {
+                $value = $field['value'] ? '☒' : '☐';  // Alternative Checkbox Zeichen
+            } else {
+                $value = is_array($field['value']) ? implode(', ', $field['value']) : $field['value'];
+            }
 
-            // Position für diese Zeile merken
+            // Startposition speichern
             $start_y = $this->GetY();
+            $current_x = $this->GetX();
 
-            // Label in fett
+            // Label vorbereiten und Höhe berechnen
             $this->SetFont($this->current_settings['font'], 'B', $this->current_settings['font_size']);
-            $this->Cell($label_width, 6, $field['label'] . ':', 0, 0); // Höhe auf 6 reduziert
+            $label_text = $field['label'] . ':';
+            $label_lines = $this->getNumLines($label_text, $label_width);
+            $label_height = $label_lines * 6 * $line_spacing;
 
-            // Value normal
+            // Label drucken
+            $this->MultiCell($label_width, 6, $label_text, 0, 'L');
+
+            // Position für den Wert setzen
+            $this->SetXY($current_x + $label_width, $start_y);
+
+            // Wert drucken
             $this->SetFont($this->current_settings['font'], '', $this->current_settings['font_size']);
-            $this->SetX($this->lMargin + $label_width);
 
-            // MultiCell für den Wert
+            if ($field['type'] === 'html') {
+                $value = $this->clean_html($value);
+            }
+
+            // Wert drucken und Höhe berechnen
             $this->MultiCell(
                 $content_width,
-                6,  // Höhe auf 6 reduziert
+                6,
                 $value,
                 0,
                 'L'
             );
 
-            // Berechne die tatsächliche Höhe des Texts
-            $lines = $this->getNumLines($value, $content_width);
-            $actual_height = max(1, $lines) * 6 * $line_spacing;
+            $value_lines = $this->getNumLines($value, $content_width);
+            $value_height = $value_lines * 6 * $line_spacing;
 
-            // Setze Y-Position für nächstes Feld
-            $this->SetY($start_y + $actual_height);
-
-            // Füge zusätzlichen Abstand zwischen den Feldern hinzu
-            $this->Ln(2);
+            // Zur höheren der beiden Positionen springen
+            $this->SetY($start_y + max($label_height, $value_height) + 2);
         }
     }
 
@@ -247,6 +272,7 @@ class PDF_Generator extends FPDF {
             $this->SetFont($this->current_settings['font'], '', 10);
             $this->SetTextColor(0, 0, 0);
             $this->write_html($this->current_settings['footer']);
+
         }
     }
 
@@ -277,7 +303,7 @@ class PDF_Generator extends FPDF {
         // Find and add submitter email if available
         foreach ($form_data['fields'] as $field) {
             if ($field['type'] === 'email' && !empty($field['value'])) {
-                $this->Cell(0, 5, 'Absender: ' . $field['value'], 0, 1, 'L');
+                $this->Cell(0, 5, 'From: ' . $field['value'], 0, 1, 'L');
                 break;
             }
         }
@@ -290,6 +316,7 @@ class PDF_Generator extends FPDF {
             }
         }
     }
+
 
     private function save_pdf() {
         pdf_debug('Saving PDF');
@@ -362,39 +389,102 @@ class PDF_Generator extends FPDF {
         ];
     }
 
+    private function isHTML($string) {
+        return $string != strip_tags($string);
+    }
+
+// Neue Methode speziell für HTML-Felder
+    private function write_html_field($html, $width, $start_y) {
+        // HTML bereinigen und formatieren
+        $html = $this->clean_html($html);
+
+        // Aktuelle Position
+        $x = $this->GetX();
+        $y = $this->GetY();
+
+        // Maximale Breite für den HTML-Content
+        $this->SetRightMargin($this->GetPageWidth() - ($x + $width));
+
+        // HTML schreiben
+        $this->write_html($html);
+
+        // Margins wiederherstellen
+        $this->SetRightMargin(self::MARGIN_RIGHT);
+    }
+
+// Neue Methode zur HTML-Bereinigung und Formatierung
+    private function clean_html($html) {
+        // UTF-8 Kodierung korrigieren
+        if (!mb_check_encoding($html, 'UTF-8')) {
+            $html = utf8_encode($html);
+        }
+
+        // Formatierung behalten
+        $html = str_replace(['<br>', '<br/>'], "\n", $html);
+        $html = str_replace('<br />', "\n", $html);
+
+        // HTML-Tags durch Formatierung ersetzen
+        $replacements = [
+            '/<h1[^>]*>(.*?)<\/h1>/i' => "\n\n$1\n\n",  // Extra Abstand für H1
+            '/<h2[^>]*>(.*?)<\/h2>/i' => "\n\n$1\n\n",  // Extra Abstand für H2
+            '/<h[3-6][^>]*>(.*?)<\/h[3-6]>/i' => "\n$1\n", // Andere Überschriften
+            '/<p[^>]*>(.*?)<\/p>/i' => "$1\n\n",        // Paragraphen mit Abstand
+            '/<li[^>]*>(.*?)<\/li>/i' => " • $1\n",     // Listenpunkte
+            '/<(ul|ol)[^>]*>(.*?)<\/(ul|ol)>/is' => "\n$2\n", // Listen
+            '/<(b|strong)[^>]*>(.*?)<\/(b|strong)>/i' => "$2",  // Fett
+            '/<(i|em)[^>]*>(.*?)<\/(i|em)>/i' => "$2",         // Kursiv
+            '/<u[^>]*>(.*?)<\/u>/i' => "$2",                   // Unterstrichen
+        ];
+
+        // Tags ersetzen
+        $text = preg_replace(array_keys($replacements), array_values($replacements), $html);
+
+        // Restliche Tags entfernen
+        $text = strip_tags($text);
+
+        // HTML Entities dekodieren
+        $text = html_entity_decode($text, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+
+        // Zeilenumbrüche normalisieren
+        $text = str_replace(["\r\n", "\r"], "\n", $text);
+
+        // Mehrfache Leerzeichen entfernen
+        $text = preg_replace('/[ \t]+/', ' ', $text);
+        $text = preg_replace('/\n\s+/', "\n", $text);
+
+        // Mehrfache Leerzeilen auf maximal zwei reduzieren
+        $text = preg_replace('/\n{3,}/', "\n\n", $text);
+
+        return trim($text);
+    }
+
+
+// Verbesserte write_html Methode
     private function write_html($html) {
         pdf_debug('Writing HTML content');
 
         try {
-            // Bilderkennung und Ersetzen von <img>-Tags
-            preg_match_all('/<img[^>]+src=["\']([^"\']+)["\'][^>]*>/i', $html, $images);
+            $html = $this->clean_html($html);
 
-            foreach ($images[1] as $imgSrc) {
-                // Bild einfügen
-                $this->Image($imgSrc, $this->GetX(), $this->GetY(), 20); // Größe anpassen
+            // Splitte Text in Absätze
+            $paragraphs = explode("\n\n", $html);
 
-                // Platz für Text neben oder unter dem Bild
-                if ($this->GetX() + 30 < $this->GetPageWidth()) {
-                    // Setze Text daneben, falls genug Platz auf der Seite ist
-                    $this->SetX($this->GetX() + 25); // Verschiebe X-Position um Bildbreite
+            foreach ($paragraphs as $paragraph) {
+                if (empty(trim($paragraph))) continue;
+
+                // Setze Schriftstil basierend auf HTML-Tags
+                if (strpos($paragraph, '<b>') !== false || strpos($paragraph, '<strong>') !== false) {
+                    $this->SetFont($this->current_settings['font'], 'B');
+                } else if (strpos($paragraph, '<i>') !== false || strpos($paragraph, '<em>') !== false) {
+                    $this->SetFont($this->current_settings['font'], 'I');
                 } else {
-                    // Andernfalls springe zur nächsten Zeile
-                    $this->Ln(25); // Springt 25 Einheiten nach unten für neuen Abschnitt
+                    $this->SetFont($this->current_settings['font'], '');
                 }
+
+                // Schreibe den Absatz
+                $this->MultiCell(0, 5, trim($paragraph), 0, 'L');
+                $this->Ln(2);
             }
-
-            // Entferne <img>-Tags aus HTML
-            $html = preg_replace('/<img[^>]+>/', '', $html);
-
-            // HTML-Formatierung beibehalten
-            $html = strip_tags($html, '<b><i><u><br>');
-            $html = str_replace(['<br>', '<br />'], "\n", $html);
-            $html = preg_replace('/<b>(.*?)<\/b>/i', "$1", $html);
-
-            // Schrift und Textfarbe setzen
-            $this->SetFont($this->current_settings['font'], '', 10);
-            $this->Write(5, $html);
-
         } catch (Exception $e) {
             pdf_debug('HTML writing error', $e->getMessage());
         }
@@ -404,29 +494,17 @@ class PDF_Generator extends FPDF {
     private function getNumLines($text, $width) {
         $this->SetFont($this->current_settings['font'], '', $this->current_settings['font_size']);
 
-        $chars = str_split($text);
-        $currentWidth = 0;
-        $lines = 1;
+        // Wenn der Text Zeilenumbrüche enthält
+        $lines = explode("\n", $text);
+        $total_lines = 0;
 
-        foreach ($chars as $char) {
-            // Get character width
-            $charWidth = $this->GetStringWidth($char);
-
-            if ($char === "\n") {
-                $lines++;
-                $currentWidth = 0;
-                continue;
-            }
-
-            $currentWidth += $charWidth;
-
-            if ($currentWidth > $width) {
-                $lines++;
-                $currentWidth = $charWidth;
-            }
+        foreach ($lines as $line) {
+            $line_width = $this->GetStringWidth($line);
+            $calculated_lines = ceil($line_width / $width);
+            $total_lines += max(1, $calculated_lines);
         }
 
-        return $lines;
+        return $total_lines;
     }
 
     public function get_last_path() {

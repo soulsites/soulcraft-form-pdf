@@ -3,39 +3,32 @@ name: Create Release ZIP
 on:
   release:
     types: [published]
-  workflow_dispatch:
-    inputs:
-      version:
-        description: 'Version number (e.g. v1.0.1)'
-        required: true
-        default: 'v1.0.1'
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      
-      - name: Create ZIP
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Prepare plugin folder
         run: |
-          echo "Creating ZIP file..."
-          mkdir -p build/soulcraft-form-pdf
-          cp -r * build/soulcraft-form-pdf/ || true
-          rm -rf build/soulcraft-form-pdf/.git build/soulcraft-form-pdf/.github build/soulcraft-form-pdf/build
-          cd build
+          # Erstelle den Hauptordner mit festem Namen
+          mkdir -p release/soulcraft-form-pdf
+          
+          # Kopiere alle Dateien außer `.git` und `.github` in diesen Ordner
+          rsync -a \
+            --exclude='.git' \
+            --exclude='.github' \
+            . release/soulcraft-form-pdf
+
+      - name: Create ZIP file
+        run: |
+          # Erstelle ZIP-Datei vom festgelegten Hauptordner
+          cd release
           zip -r ../soulcraft-form-pdf.zip soulcraft-form-pdf
           
-      - name: Upload to existing release
-        if: github.event_name == 'release'
-        uses: softprops/action-gh-release@v2
+      - name: Upload Release Asset
+        uses: softprops/action-gh-release@v1
         with:
           files: soulcraft-form-pdf.zip
-          
-      - name: Create new release
-        if: github.event_name == 'workflow_dispatch'
-        uses: ncipollo/release-action@v1
-        with:
-          artifacts: "soulcraft-form-pdf.zip"
-          tag: ${{ github.event.inputs.version }}
-          name: "Release ${{ github.event.inputs.version }}"
-          generateReleaseNotes: true

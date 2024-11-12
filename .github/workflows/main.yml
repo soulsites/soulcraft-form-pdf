@@ -2,10 +2,7 @@ name: Create Release ZIP
 
 on:
   release:
-    types: [published, created, released]
-  push:
-    tags:
-      - 'v*'
+    types: [published]
   workflow_dispatch:
 
 jobs:
@@ -15,20 +12,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Create Tag
-  run: |
-    git config --global user.email "info@soulsites.de"
-    git config --global user.name "Christian Wedel"
-    git tag -a v0.9.2 -m "Release 0.9.2"
-    git push origin v0.9.2
-
-      - name: Debug Info
-        run: |
-          echo "Event name: ${{ github.event_name }}"
-          echo "Event type: ${{ github.event.action }}"
-          echo "Reference: ${{ github.ref }}"
+        uses: actions/checkout@v4  # Aktualisierte Version
 
       - name: Create ZIP
         run: |
@@ -40,6 +24,16 @@ jobs:
           cd ..
 
       - name: Upload to Release
-        uses: softprops/action-gh-release@v1
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2  # Aktualisierte Version
         with:
           files: soulcraft-form-pdf.zip
+
+      - name: Create Release
+        if: github.event_name == 'workflow_dispatch'
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "soulcraft-form-pdf.zip"
+          tag: "v1.0.1"  # Passen Sie die Version an
+          name: "Release v1.0.1"  # Passen Sie den Namen an
+          generateReleaseNotes: true

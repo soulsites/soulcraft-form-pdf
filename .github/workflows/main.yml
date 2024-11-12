@@ -1,39 +1,32 @@
 name: Create Release ZIP
 
 on:
-  release:
-    types: [published]
   workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version number (e.g. v1.0.1)'
+        required: true
+        default: 'v1.0.1'
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4  # Aktualisierte Version
-
+      - uses: actions/checkout@v4
+      
       - name: Create ZIP
         run: |
+          echo "Creating ZIP for version ${{ github.event.inputs.version }}"
           mkdir -p build/soulcraft-form-pdf
           cp -r * build/soulcraft-form-pdf/ || true
           rm -rf build/soulcraft-form-pdf/.git build/soulcraft-form-pdf/.github build/soulcraft-form-pdf/build
           cd build
           zip -r ../soulcraft-form-pdf.zip soulcraft-form-pdf
-          cd ..
-
-      - name: Upload to Release
-        if: github.event_name == 'release'
-        uses: softprops/action-gh-release@v2  # Aktualisierte Version
-        with:
-          files: soulcraft-form-pdf.zip
-
+          
       - name: Create Release
-        if: github.event_name == 'workflow_dispatch'
         uses: ncipollo/release-action@v1
         with:
           artifacts: "soulcraft-form-pdf.zip"
-          tag: "v1.0.1"  # Passen Sie die Version an
-          name: "Release v1.0.1"  # Passen Sie den Namen an
+          tag: ${{ github.event.inputs.version }}
+          name: "Release ${{ github.event.inputs.version }}"
           generateReleaseNotes: true

@@ -1,12 +1,35 @@
-name: Test Workflow
+name: Create Release ZIP
 
 on:
-  push:
-    branches: [ main ]
+  release:
+    types: [published]
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - name: Print Hello
-        run: echo "Hello World"
+      - uses: actions/checkout@v2
+      
+      - name: Create ZIP
+        run: |
+          # Erstelle temporären Build-Ordner
+          mkdir build
+          mkdir build/soulcraft-form-pdf
+          
+          # Kopiere alle Dateien in den Plugin-Ordner
+          cp -r * build/soulcraft-form-pdf/ || true
+          
+          # Entferne nicht benötigte Dateien/Ordner
+          rm -rf build/soulcraft-form-pdf/.git build/soulcraft-form-pdf/.github build/soulcraft-form-pdf/build
+          
+          # Erstelle ZIP
+          cd build
+          zip -r ../soulcraft-form-pdf.zip soulcraft-form-pdf
+          cd ..
+          
+      - name: Upload to Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: soulcraft-form-pdf.zip

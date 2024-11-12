@@ -220,10 +220,13 @@ function soulcraft_pdf() {
 add_action('plugins_loaded', 'soulcraft_pdf');
 
 $myUpdateChecker = PucFactory::buildUpdateChecker(
-    'https://github.com/soulsites/soulcraft-form-pdf.git',
+    'https://github.com/soulsites/soulcraft-form-pdf',
     __FILE__,
     'soulcraft-form-pdf'
 );
+
+$myUpdateChecker->setBranch('main');
+$myUpdateChecker->debugMode = true;
 
 // Für private Repositories
 $myUpdateChecker->setAuthentication('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');

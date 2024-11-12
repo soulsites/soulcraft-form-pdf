@@ -1,20 +1,12 @@
-name: Create Release ZIP
+name: Test Workflow
 
 on:
-  release:
-    types: [created]
+  push:
+    branches: [ main ]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    
-    - name: Create ZIP
-      run: |
-        zip -r soulcraft-form-pdf.zip . -x ".git/*" ".github/*"
-        
-    - name: Upload Release Asset
-      uses: softprops/action-gh-release@v1
-      with:
-        files: soulcraft-form-pdf.zip
+      - name: Print Hello
+        run: echo "Hello World"

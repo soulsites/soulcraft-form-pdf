@@ -1,0 +1,5 @@
+/.git export-ignore
+/.github export-ignore
+/.gitignore export-ignore
+/.distignore export-ignore
+/node_modules export-ignore

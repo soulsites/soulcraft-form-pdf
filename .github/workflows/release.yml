@@ -1,0 +1,33 @@
+name: Create Release ZIP
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Create plugin artifact
+        run: |
+          # Erstelle temporären Ordner
+          mkdir tmp-plugin
+          
+          # Kopiere alles außer .git und .github in den Plugin-Ordner
+          rsync -r \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='tmp-plugin' \
+            . "tmp-plugin/soulcraft-form-pdf"
+          
+          # Erstelle ZIP mit korrektem Ordnernamen
+          cd tmp-plugin
+          zip -r ../soulcraft-form-pdf.zip soulcraft-form-pdf
+
+      - name: Upload Release Asset
+        uses: softprops/action-gh-release@v1
+        with:
+          files: soulcraft-form-pdf.zip

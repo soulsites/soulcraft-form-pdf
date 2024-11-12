@@ -14,20 +14,18 @@ jobs:
       - name: Create plugin artifact
         run: |
           # Erstelle temporären Ordner
-          mkdir -p tmp-plugin/soulcraft-form-pdf
+          mkdir tmp-plugin
           
           # Kopiere alles außer .git und .github in den Plugin-Ordner
-          rsync -a \
+          rsync -r \
             --exclude='.git' \
             --exclude='.github' \
-            . tmp-plugin/soulcraft-form-pdf
+            --exclude='tmp-plugin' \
+            . "tmp-plugin/soulcraft-form-pdf"
           
-          # Erstelle ZIP im Hauptverzeichnis mit korrektem Ordnernamen
+          # Erstelle ZIP mit korrektem Ordnernamen
           cd tmp-plugin
           zip -r ../soulcraft-form-pdf.zip soulcraft-form-pdf
-          
-          # Zurück ins Hauptverzeichnis
-          cd ..
 
       - name: Upload Release Asset
         uses: softprops/action-gh-release@v1

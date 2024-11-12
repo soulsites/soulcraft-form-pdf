@@ -17,6 +17,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Create Tag
+  run: |
+    git config --global user.email "info@soulsites.de"
+    git config --global user.name "Christian Wedel"
+    git tag -a v0.9.2 -m "Release 0.9.2"
+    git push origin v0.9.2
+
       - name: Debug Info
         run: |
           echo "Event name: ${{ github.event_name }}"

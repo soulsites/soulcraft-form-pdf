@@ -1,6 +1,8 @@
 name: Create Release ZIP
 
 on:
+  release:
+    types: [published]
   workflow_dispatch:
     inputs:
       version:
@@ -16,14 +18,21 @@ jobs:
       
       - name: Create ZIP
         run: |
-          echo "Creating ZIP for version ${{ github.event.inputs.version }}"
+          echo "Creating ZIP file..."
           mkdir -p build/soulcraft-form-pdf
           cp -r * build/soulcraft-form-pdf/ || true
           rm -rf build/soulcraft-form-pdf/.git build/soulcraft-form-pdf/.github build/soulcraft-form-pdf/build
           cd build
           zip -r ../soulcraft-form-pdf.zip soulcraft-form-pdf
           
-      - name: Create Release
+      - name: Upload to existing release
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: soulcraft-form-pdf.zip
+          
+      - name: Create new release
+        if: github.event_name == 'workflow_dispatch'
         uses: ncipollo/release-action@v1
         with:
           artifacts: "soulcraft-form-pdf.zip"

@@ -1,0 +1,1360 @@
+[11-Nov-2024 20:58:37 UTC] PDF Debug: Initializing Soulcraft PDF
+[11-Nov-2024 20:58:37 UTC] PDF Debug: Setting up directories
+[11-Nov-2024 20:58:37 UTC] PDF Debug: Loading providers
+[11-Nov-2024 20:58:37 UTC] PDF Debug: Provider directory /home/www/redesign/wp-content/plugins/soulcraft-pdf/providers/
+[11-Nov-2024 20:58:37 UTC] PDF Debug: Found provider files Array
+(
+    [0] => /home/www/redesign/wp-content/plugins/soulcraft-pdf/providers/class-cf7-provider.php
+    [1] => /home/www/redesign/wp-content/plugins/soulcraft-pdf/providers/class-elementor-provider.php
+    [2] => /home/www/redesign/wp-content/plugins/soulcraft-pdf/providers/class-ninja-provider.php
+)
+
+[11-Nov-2024 20:58:37 UTC] PDF Debug: Loading provider file class-cf7-provider.php
+[11-Nov-2024 20:58:37 UTC] PDF Debug: Loading provider file class-elementor-provider.php
+[11-Nov-2024 20:58:37 UTC] PDF Debug: Loading provider file class-ninja-provider.php
+[11-Nov-2024 20:58:37 UTC] PDF Debug: PDF Generator initialized
+[11-Nov-2024 20:58:37 UTC] PDF Debug: Contact Form 7 Provider - Checking if active yes
+[11-Nov-2024 20:58:37 UTC] PDF Debug: Contact Form 7 Provider - Initializing provider
+[11-Nov-2024 20:58:37 UTC] PDF Debug: Registered provider: Contact Form 7
+[11-Nov-2024 20:58:37 UTC] PDF Debug: Elementor Forms Provider - Checking if active yes
+[11-Nov-2024 20:58:37 UTC] PDF Debug: Elementor Forms Provider - Initializing provider
+[11-Nov-2024 20:58:37 UTC] PDF Debug: Elementor Forms Provider - Provider initialized with hooks
+[11-Nov-2024 20:58:37 UTC] PDF Debug: Registered provider: Elementor Forms
+[11-Nov-2024 20:58:37 UTC] PDF Debug: Ninja Forms Provider - Checking if active yes
+[11-Nov-2024 20:58:37 UTC] PDF Debug: Ninja Forms Provider - Initializing provider
+[11-Nov-2024 20:58:37 UTC] PDF Debug: Registered provider: Ninja Forms
+[11-Nov-2024 20:58:37 UTC] PDF Debug: Providers loaded
+[11-Nov-2024 20:58:37 UTC] PDF Debug: Soulcraft PDF initialization complete
+[11-Nov-2024 20:58:38 UTC] PDF Debug: Initializing Soulcraft PDF
+[11-Nov-2024 20:58:38 UTC] PDF Debug: Setting up directories
+[11-Nov-2024 20:58:38 UTC] PDF Debug: Loading providers
+[11-Nov-2024 20:58:38 UTC] PDF Debug: Provider directory /home/www/redesign/wp-content/plugins/soulcraft-pdf/providers/
+[11-Nov-2024 20:58:38 UTC] PDF Debug: Found provider files Array
+(
+    [0] => /home/www/redesign/wp-content/plugins/soulcraft-pdf/providers/class-cf7-provider.php
+    [1] => /home/www/redesign/wp-content/plugins/soulcraft-pdf/providers/class-elementor-provider.php
+    [2] => /home/www/redesign/wp-content/plugins/soulcraft-pdf/providers/class-ninja-provider.php
+)
+
+[11-Nov-2024 20:58:38 UTC] PDF Debug: Loading provider file class-cf7-provider.php
+[11-Nov-2024 20:58:38 UTC] PDF Debug: Loading provider file class-elementor-provider.php
+[11-Nov-2024 20:58:38 UTC] PDF Debug: Loading provider file class-ninja-provider.php
+[11-Nov-2024 20:58:38 UTC] PDF Debug: PDF Generator initialized
+[11-Nov-2024 20:58:38 UTC] PDF Debug: Contact Form 7 Provider - Checking if active yes
+[11-Nov-2024 20:58:38 UTC] PDF Debug: Contact Form 7 Provider - Initializing provider
+[11-Nov-2024 20:58:38 UTC] PDF Debug: Registered provider: Contact Form 7
+[11-Nov-2024 20:58:38 UTC] PDF Debug: Elementor Forms Provider - Checking if active yes
+[11-Nov-2024 20:58:38 UTC] PDF Debug: Elementor Forms Provider - Initializing provider
+[11-Nov-2024 20:58:38 UTC] PDF Debug: Elementor Forms Provider - Provider initialized with hooks
+[11-Nov-2024 20:58:38 UTC] PDF Debug: Registered provider: Elementor Forms
+[11-Nov-2024 20:58:38 UTC] PDF Debug: Ninja Forms Provider - Checking if active yes
+[11-Nov-2024 20:58:38 UTC] PDF Debug: Ninja Forms Provider - Initializing provider
+[11-Nov-2024 20:58:38 UTC] PDF Debug: Registered provider: Ninja Forms
+[11-Nov-2024 20:58:38 UTC] PDF Debug: Providers loaded
+[11-Nov-2024 20:58:38 UTC] PDF Debug: Soulcraft PDF initialization complete
+[11-Nov-2024 20:58:39 UTC] PHP Warning:  Attempt to read property "ID" on null in /home/www/redesign/wp-content/plugins/elementor-pro/modules/posts/skins/skin-content-base.php on line 226
+[11-Nov-2024 20:58:39 UTC] PHP Warning:  Attempt to read property "ID" on null in /home/www/redesign/wp-content/plugins/elementor-pro/modules/posts/skins/skin-content-base.php on line 233
+[11-Nov-2024 20:58:39 UTC] PHP Warning:  Attempt to read property "ID" on null in /home/www/redesign/wp-content/plugins/elementor-pro/modules/posts/skins/skin-content-base.php on line 238
+[11-Nov-2024 20:58:39 UTC] PHP Warning:  Attempt to read property "ID" on null in /home/www/redesign/wp-content/plugins/elementor-pro/modules/posts/skins/skin-content-base.php on line 244
+[11-Nov-2024 20:58:39 UTC] PHP Warning:  Attempt to read property "ID" on null in /home/www/redesign/wp-content/plugins/elementor-pro/modules/posts/skins/skin-content-base.php on line 250
+[11-Nov-2024 20:58:39 UTC] PHP Warning:  Attempt to read property "ID" on null in /home/www/redesign/wp-content/plugins/elementor-pro/modules/posts/skins/skin-content-base.php on line 271
+[11-Nov-2024 20:58:39 UTC] PDF Debug: Initializing Soulcraft PDF
+[11-Nov-2024 20:58:39 UTC] PDF Debug: Setting up directories
+[11-Nov-2024 20:58:39 UTC] PDF Debug: Loading providers
+[11-Nov-2024 20:58:39 UTC] PDF Debug: Provider directory /home/www/redesign/wp-content/plugins/soulcraft-pdf/providers/
+[11-Nov-2024 20:58:39 UTC] PDF Debug: Found provider files Array
+(
+    [0] => /home/www/redesign/wp-content/plugins/soulcraft-pdf/providers/class-cf7-provider.php
+    [1] => /home/www/redesign/wp-content/plugins/soulcraft-pdf/providers/class-elementor-provider.php
+    [2] => /home/www/redesign/wp-content/plugins/soulcraft-pdf/providers/class-ninja-provider.php
+)
+
+[11-Nov-2024 20:58:39 UTC] PDF Debug: Loading provider file class-cf7-provider.php
+[11-Nov-2024 20:58:39 UTC] PDF Debug: Loading provider file class-elementor-provider.php
+[11-Nov-2024 20:58:39 UTC] PDF Debug: Loading provider file class-ninja-provider.php
+[11-Nov-2024 20:58:39 UTC] PDF Debug: PDF Generator initialized
+[11-Nov-2024 20:58:39 UTC] PDF Debug: Contact Form 7 Provider - Checking if active yes
+[11-Nov-2024 20:58:39 UTC] PDF Debug: Contact Form 7 Provider - Initializing provider
+[11-Nov-2024 20:58:39 UTC] PDF Debug: Registered provider: Contact Form 7
+[11-Nov-2024 20:58:39 UTC] PDF Debug: Elementor Forms Provider - Checking if active yes
+[11-Nov-2024 20:58:39 UTC] PDF Debug: Elementor Forms Provider - Initializing provider
+[11-Nov-2024 20:58:39 UTC] PDF Debug: Elementor Forms Provider - Provider initialized with hooks
+[11-Nov-2024 20:58:39 UTC] PDF Debug: Registered provider: Elementor Forms
+[11-Nov-2024 20:58:39 UTC] PDF Debug: Ninja Forms Provider - Checking if active yes
+[11-Nov-2024 20:58:39 UTC] PDF Debug: Ninja Forms Provider - Initializing provider
+[11-Nov-2024 20:58:39 UTC] PDF Debug: Registered provider: Ninja Forms
+[11-Nov-2024 20:58:39 UTC] PDF Debug: Providers loaded
+[11-Nov-2024 20:58:39 UTC] PDF Debug: Soulcraft PDF initialization complete
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Initializing Soulcraft PDF
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Setting up directories
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Loading providers
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Provider directory /home/www/redesign/wp-content/plugins/soulcraft-pdf/providers/
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Found provider files Array
+(
+    [0] => /home/www/redesign/wp-content/plugins/soulcraft-pdf/providers/class-cf7-provider.php
+    [1] => /home/www/redesign/wp-content/plugins/soulcraft-pdf/providers/class-elementor-provider.php
+    [2] => /home/www/redesign/wp-content/plugins/soulcraft-pdf/providers/class-ninja-provider.php
+)
+
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Loading provider file class-cf7-provider.php
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Loading provider file class-elementor-provider.php
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Loading provider file class-ninja-provider.php
+[11-Nov-2024 20:58:47 UTC] PDF Debug: PDF Generator initialized
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Contact Form 7 Provider - Checking if active yes
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Contact Form 7 Provider - Initializing provider
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Registered provider: Contact Form 7
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Elementor Forms Provider - Checking if active yes
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Elementor Forms Provider - Initializing provider
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Elementor Forms Provider - Provider initialized with hooks
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Registered provider: Elementor Forms
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Ninja Forms Provider - Checking if active yes
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Ninja Forms Provider - Initializing provider
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Registered provider: Ninja Forms
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Providers loaded
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Settings Page constructor start
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Registering settings fields
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Contact Form 7 Provider - Checking if active yes
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Contact Form 7 Provider - Checking if active yes
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Contact Form 7 Provider - Fetching forms
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Contact Form 7 Provider - Found forms 2
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Contact Form 7 Provider - Added form Array
+(
+    [id] => contact-form-7_2759
+    [title] => Kontaktformular 1
+)
+
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Contact Form 7 Provider - Added form Array
+(
+    [id] => contact-form-7_2760
+    [title] => Ohne Titel
+)
+
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Got forms from Contact Form 7 Array
+(
+    [contact-form-7_2759] => [CF7] Kontaktformular 1
+    [contact-form-7_2760] => [CF7] Ohne Titel
+)
+
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Elementor Forms Provider - Checking if active yes
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Elementor Forms Provider - Checking if active yes
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Elementor Forms Provider - Fetching forms
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Elementor Forms Provider - Found posts with Elementor data 57
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_188c5b8c
+    [name] => New Form
+    [post] => export
+)
+
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_78aeab9c
+    [name] => soulsitesKontakt
+    [post] => Startseite 002
+)
+
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_651c49c5
+    [name] => soulsitesKontakt
+    [post] => Angebote - Webdesign
+)
+
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_114d14a4
+    [name] => New Form
+    [post] => Soulsites Blue
+)
+
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_c656213
+    [name] => Neues Formular
+    [post] => Start 2021
+)
+
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_5811953c
+    [name] => Neues Formular
+    [post] => Webdesign Angebot
+)
+
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_1f55eeb0
+    [name] => Neues Formular
+    [post] => Kontakt - Block
+)
+
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_c283505
+    [name] => Neues Formular
+    [post] => Retro
+)
+
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_3e9683b
+    [name] => Neues Formular
+    [post] => Erstelle deine Persona
+)
+
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_7cbe349
+    [name] => Neues Formular
+    [post] => Mini Kurs - Finde die richtigen Texte für deine Angebotsseite
+)
+
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_883abcc
+    [name] => Neues Formular
+    [post] => Neu 2023 Mobile LP
+)
+
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_8b224a4
+    [name] => Neues Formular
+    [post] => Minimal - 2024
+)
+
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_d0fc83f
+    [name] => Neues Formular
+    [post] => Kontakt
+)
+
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_5654569
+    [name] => Neues Formular
+    [post] => Glas
+)
+
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_385b6d5
+    [name] => Neu 5
+    [post] => Kontakt
+)
+
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_0df205e
+    [name] => Neu 4
+    [post] => Elementor kontakt
+)
+
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Elementor Forms Provider - Forms cached in transient
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Got forms from Elementor Forms Array
+(
+    [elementor-forms_188c5b8c] => [Elementor] New Form
+    [elementor-forms_78aeab9c] => [Elementor] soulsitesKontakt
+    [elementor-forms_651c49c5] => [Elementor] soulsitesKontakt
+    [elementor-forms_114d14a4] => [Elementor] New Form
+    [elementor-forms_c656213] => [Elementor] Neues Formular
+    [elementor-forms_5811953c] => [Elementor] Neues Formular
+    [elementor-forms_1f55eeb0] => [Elementor] Neues Formular
+    [elementor-forms_c283505] => [Elementor] Neues Formular
+    [elementor-forms_3e9683b] => [Elementor] Neues Formular
+    [elementor-forms_7cbe349] => [Elementor] Neues Formular
+    [elementor-forms_883abcc] => [Elementor] Neues Formular
+    [elementor-forms_8b224a4] => [Elementor] Neues Formular
+    [elementor-forms_d0fc83f] => [Elementor] Neues Formular
+    [elementor-forms_5654569] => [Elementor] Neues Formular
+    [elementor-forms_385b6d5] => [Elementor] Neu 5
+    [elementor-forms_0df205e] => [Elementor] Neu 4
+)
+
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Ninja Forms Provider - Checking if active yes
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Ninja Forms Provider - Checking if active yes
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Ninja Forms Provider - Fetching forms
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Ninja Forms Provider - Found forms 3
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Ninja Forms Provider - Added form Array
+(
+    [id] => ninja-forms_1
+    [title] => Contact Me
+)
+
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Ninja Forms Provider - Added form Array
+(
+    [id] => ninja-forms_2
+    [title] => Kontakt Test
+)
+
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Ninja Forms Provider - Added form Array
+(
+    [id] => ninja-forms_3
+    [title] => Kontakt 3
+)
+
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Ninja Forms Provider - Forms cached in transient
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Got forms from Ninja Forms Array
+(
+    [ninja-forms_1] => [Ninja] Contact Me
+    [ninja-forms_2] => [Ninja] Kontakt Test
+    [ninja-forms_3] => [Ninja] Kontakt 3
+)
+
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Forms for dropdown Array
+(
+    [] => -- Bitte auswählen --
+    [all] => Alle Formulare
+    [contact-form-7_2759] => [CF7] Kontaktformular 1
+    [contact-form-7_2760] => [CF7] Ohne Titel
+    [elementor-forms_188c5b8c] => [Elementor] New Form
+    [elementor-forms_78aeab9c] => [Elementor] soulsitesKontakt
+    [elementor-forms_651c49c5] => [Elementor] soulsitesKontakt
+    [elementor-forms_114d14a4] => [Elementor] New Form
+    [elementor-forms_c656213] => [Elementor] Neues Formular
+    [elementor-forms_5811953c] => [Elementor] Neues Formular
+    [elementor-forms_1f55eeb0] => [Elementor] Neues Formular
+    [elementor-forms_c283505] => [Elementor] Neues Formular
+    [elementor-forms_3e9683b] => [Elementor] Neues Formular
+    [elementor-forms_7cbe349] => [Elementor] Neues Formular
+    [elementor-forms_883abcc] => [Elementor] Neues Formular
+    [elementor-forms_8b224a4] => [Elementor] Neues Formular
+    [elementor-forms_d0fc83f] => [Elementor] Neues Formular
+    [elementor-forms_5654569] => [Elementor] Neues Formular
+    [elementor-forms_385b6d5] => [Elementor] Neu 5
+    [elementor-forms_0df205e] => [Elementor] Neu 4
+    [ninja-forms_1] => [Ninja] Contact Me
+    [ninja-forms_2] => [Ninja] Kontakt Test
+    [ninja-forms_3] => [Ninja] Kontakt 3
+)
+
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Available fonts Array
+(
+    [helvetica] => Helvetica
+    [arial] => Arial
+    [times] => Times New Roman
+    [courier] => Courier
+    [symbol] => Symbol
+    [zapfdingbats] => ZapfDingbats
+)
+
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Registering Carbon Fields
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Contact Form 7 Provider - Checking if active yes
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Got forms from Contact Form 7 Array
+(
+    [contact-form-7_2759] => [CF7] Kontaktformular 1
+    [contact-form-7_2760] => [CF7] Ohne Titel
+)
+
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Elementor Forms Provider - Checking if active yes
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Got forms from Elementor Forms Array
+(
+    [elementor-forms_188c5b8c] => [Elementor] New Form
+    [elementor-forms_78aeab9c] => [Elementor] soulsitesKontakt
+    [elementor-forms_651c49c5] => [Elementor] soulsitesKontakt
+    [elementor-forms_114d14a4] => [Elementor] New Form
+    [elementor-forms_c656213] => [Elementor] Neues Formular
+    [elementor-forms_5811953c] => [Elementor] Neues Formular
+    [elementor-forms_1f55eeb0] => [Elementor] Neues Formular
+    [elementor-forms_c283505] => [Elementor] Neues Formular
+    [elementor-forms_3e9683b] => [Elementor] Neues Formular
+    [elementor-forms_7cbe349] => [Elementor] Neues Formular
+    [elementor-forms_883abcc] => [Elementor] Neues Formular
+    [elementor-forms_8b224a4] => [Elementor] Neues Formular
+    [elementor-forms_d0fc83f] => [Elementor] Neues Formular
+    [elementor-forms_5654569] => [Elementor] Neues Formular
+    [elementor-forms_385b6d5] => [Elementor] Neu 5
+    [elementor-forms_0df205e] => [Elementor] Neu 4
+)
+
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Ninja Forms Provider - Checking if active yes
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Got forms from Ninja Forms Array
+(
+    [ninja-forms_1] => [Ninja] Contact Me
+    [ninja-forms_2] => [Ninja] Kontakt Test
+    [ninja-forms_3] => [Ninja] Kontakt 3
+)
+
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Forms for dropdown Array
+(
+    [] => -- Bitte auswählen --
+    [all] => Alle Formulare
+    [contact-form-7_2759] => [CF7] Kontaktformular 1
+    [contact-form-7_2760] => [CF7] Ohne Titel
+    [elementor-forms_188c5b8c] => [Elementor] New Form
+    [elementor-forms_78aeab9c] => [Elementor] soulsitesKontakt
+    [elementor-forms_651c49c5] => [Elementor] soulsitesKontakt
+    [elementor-forms_114d14a4] => [Elementor] New Form
+    [elementor-forms_c656213] => [Elementor] Neues Formular
+    [elementor-forms_5811953c] => [Elementor] Neues Formular
+    [elementor-forms_1f55eeb0] => [Elementor] Neues Formular
+    [elementor-forms_c283505] => [Elementor] Neues Formular
+    [elementor-forms_3e9683b] => [Elementor] Neues Formular
+    [elementor-forms_7cbe349] => [Elementor] Neues Formular
+    [elementor-forms_883abcc] => [Elementor] Neues Formular
+    [elementor-forms_8b224a4] => [Elementor] Neues Formular
+    [elementor-forms_d0fc83f] => [Elementor] Neues Formular
+    [elementor-forms_5654569] => [Elementor] Neues Formular
+    [elementor-forms_385b6d5] => [Elementor] Neu 5
+    [elementor-forms_0df205e] => [Elementor] Neu 4
+    [ninja-forms_1] => [Ninja] Contact Me
+    [ninja-forms_2] => [Ninja] Kontakt Test
+    [ninja-forms_3] => [Ninja] Kontakt 3
+)
+
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Available fonts Array
+(
+    [helvetica] => Helvetica
+    [arial] => Arial
+    [times] => Times New Roman
+    [courier] => Courier
+    [symbol] => Symbol
+    [zapfdingbats] => ZapfDingbats
+)
+
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Settings Page constructor complete
+[11-Nov-2024 20:58:47 UTC] PDF Debug: Soulcraft PDF initialization complete
+[11-Nov-2024 20:58:47 UTC] PHP Warning:  Undefined array key "unchecked_calc_value" in /home/www/redesign/wp-content/plugins/ninja-forms/includes/Fields/Checkbox.php on line 138
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Ninja Forms Provider - Processing form submission
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Ninja Forms Provider - Processing submission for form ninja-forms_2
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Ninja Forms Provider - Preparing submission data
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Using "all" form settings for: ninja-forms_2
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Ninja Forms Provider - PDF data prepared Array
+(
+    [form_id] => ninja-forms_2
+    [title] => Test
+    [fields] => Array
+        (
+            [0] => Array
+                (
+                    [label] => Name
+                    [value] => test 28
+                    [type] => textbox
+                )
+
+            [1] => Array
+                (
+                    [label] => E-Mail
+                    [value] => info@soulsites.de
+                    [type] => email
+                )
+
+            [2] => Array
+                (
+                    [label] => Text
+                    [value] => test 28
+                    [type] => textarea
+                )
+
+        )
+
+    [settings] => Array
+        (
+            [_type] => _
+            [form_id] => all
+            [pdf_title] => Test
+            [pdf_email_recipients] => Array
+                (
+                    [0] => form_recipient
+                )
+
+            [pdf_custom_email] =>
+            [header] => Test
+            [footer] => test
+            [font] => helvetica
+            [font_size] => 10
+            [title_font_size] => 16
+            [line_spacing] => 2
+            [background_color] => #E1E1E1
+            [header_background] => #BDBDBD
+            [footer_background] => #B0B0B0
+            [show_metadata] => 1
+            [preview_section] =>
+            [pdf_preview_email] => info@soulsites.de
+            [preview_button] =>
+        )
+
+    [metadata] => Array
+        (
+            [timestamp] => 2024-11-11 21:58:49
+            [form_type] => ninja-forms
+            [site_url] => https://redesign.soulsites.de
+        )
+
+)
+
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Starting PDF generation Array
+(
+    [form_id] => ninja-forms_2
+    [title] => Test
+    [fields] => Array
+        (
+            [0] => Array
+                (
+                    [label] => Name
+                    [value] => test 28
+                    [type] => textbox
+                )
+
+            [1] => Array
+                (
+                    [label] => E-Mail
+                    [value] => info@soulsites.de
+                    [type] => email
+                )
+
+            [2] => Array
+                (
+                    [label] => Text
+                    [value] => test 28
+                    [type] => textarea
+                )
+
+        )
+
+    [settings] => Array
+        (
+            [_type] => _
+            [form_id] => all
+            [pdf_title] => Test
+            [pdf_email_recipients] => Array
+                (
+                    [0] => form_recipient
+                )
+
+            [pdf_custom_email] =>
+            [header] => Test
+            [footer] => test
+            [font] => helvetica
+            [font_size] => 10
+            [title_font_size] => 16
+            [line_spacing] => 2
+            [background_color] => #E1E1E1
+            [header_background] => #BDBDBD
+            [footer_background] => #B0B0B0
+            [show_metadata] => 1
+            [preview_section] =>
+            [pdf_preview_email] => info@soulsites.de
+            [preview_button] =>
+        )
+
+    [metadata] => Array
+        (
+            [timestamp] => 2024-11-11 21:58:49
+            [form_type] => ninja-forms
+            [site_url] => https://redesign.soulsites.de
+        )
+
+)
+
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Loading settings for form ninja-forms_2
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Loaded settings Array
+(
+    [pdf_title] => Test
+    [font] => helvetica
+    [font_size] => 10
+    [title_font_size] => 16
+    [line_spacing] => 2
+    [show_metadata] => 1
+    [background_color] => #E1E1E1
+    [header_background] => #BDBDBD
+    [footer_background] => #B0B0B0
+    [header] => Test
+    [footer] => test
+    [_type] => _
+    [form_id] => all
+    [pdf_email_recipients] => Array
+        (
+            [0] => form_recipient
+        )
+
+    [pdf_custom_email] =>
+    [preview_section] =>
+    [pdf_preview_email] => info@soulsites.de
+    [preview_button] =>
+)
+
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Rendering header Test
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Setting font Array
+(
+    [family] => helvetica
+    [style] =>
+    [size] => 10
+)
+
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Writing HTML content
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Setting font Array
+(
+    [family] => helvetica
+    [style] =>
+    [size] => 10
+)
+
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Setting font Array
+(
+    [family] => helvetica
+    [style] => B
+    [size] => 16
+)
+
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Setting font Array
+(
+    [family] => helvetica
+    [style] =>
+    [size] => 10
+)
+
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Setting font Array
+(
+    [family] => helvetica
+    [style] => B
+    [size] => 10
+)
+
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Setting font Array
+(
+    [family] => helvetica
+    [style] =>
+    [size] => 10
+)
+
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Setting font Array
+(
+    [family] => helvetica
+    [style] =>
+    [size] => 10
+)
+
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Setting font Array
+(
+    [family] => helvetica
+    [style] => B
+    [size] => 10
+)
+
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Setting font Array
+(
+    [family] => helvetica
+    [style] =>
+    [size] => 10
+)
+
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Setting font Array
+(
+    [family] => helvetica
+    [style] =>
+    [size] => 10
+)
+
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Setting font Array
+(
+    [family] => helvetica
+    [style] => B
+    [size] => 10
+)
+
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Setting font Array
+(
+    [family] => helvetica
+    [style] =>
+    [size] => 10
+)
+
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Setting font Array
+(
+    [family] => helvetica
+    [style] =>
+    [size] => 10
+)
+
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Adding metadata
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Setting font Array
+(
+    [family] => helvetica
+    [style] => I
+    [size] => 8
+)
+
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Saving PDF
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Attempting to save PDF to /home/www/redesign/wp-content/uploads/soulcraft-pdf/2024/11/Test_1731358729.pdf
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Rendering footer test
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Setting font Array
+(
+    [family] => helvetica
+    [style] =>
+    [size] => 10
+)
+
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Writing HTML content
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Setting font Array
+(
+    [family] => helvetica
+    [style] =>
+    [size] => 10
+)
+
+[11-Nov-2024 20:58:49 UTC] PDF Debug: PDF saved successfully
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Generated PDF at path /home/www/redesign/wp-content/uploads/soulcraft-pdf/2024/11/Test_1731358729.pdf
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Ninja Forms Provider - PDF generated at: /home/www/redesign/wp-content/uploads/soulcraft-pdf/2024/11/Test_1731358729.pdf
+[11-Nov-2024 20:58:49 UTC] PDF Debug: Ninja Forms Provider - No recipients found for PDF email
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Initializing Soulcraft PDF
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Setting up directories
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Loading providers
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Provider directory /home/www/redesign/wp-content/plugins/soulcraft-pdf/providers/
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Found provider files Array
+(
+    [0] => /home/www/redesign/wp-content/plugins/soulcraft-pdf/providers/class-cf7-provider.php
+    [1] => /home/www/redesign/wp-content/plugins/soulcraft-pdf/providers/class-elementor-provider.php
+    [2] => /home/www/redesign/wp-content/plugins/soulcraft-pdf/providers/class-ninja-provider.php
+)
+
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Loading provider file class-cf7-provider.php
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Loading provider file class-elementor-provider.php
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Loading provider file class-ninja-provider.php
+[11-Nov-2024 20:58:53 UTC] PDF Debug: PDF Generator initialized
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Contact Form 7 Provider - Checking if active yes
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Contact Form 7 Provider - Initializing provider
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Registered provider: Contact Form 7
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Elementor Forms Provider - Checking if active yes
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Elementor Forms Provider - Initializing provider
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Elementor Forms Provider - Provider initialized with hooks
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Registered provider: Elementor Forms
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Ninja Forms Provider - Checking if active yes
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Ninja Forms Provider - Initializing provider
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Registered provider: Ninja Forms
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Providers loaded
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Settings Page constructor start
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Registering settings fields
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Contact Form 7 Provider - Checking if active yes
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Contact Form 7 Provider - Checking if active yes
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Contact Form 7 Provider - Fetching forms
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Contact Form 7 Provider - Found forms 2
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Contact Form 7 Provider - Added form Array
+(
+    [id] => contact-form-7_2759
+    [title] => Kontaktformular 1
+)
+
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Contact Form 7 Provider - Added form Array
+(
+    [id] => contact-form-7_2760
+    [title] => Ohne Titel
+)
+
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Got forms from Contact Form 7 Array
+(
+    [contact-form-7_2759] => [CF7] Kontaktformular 1
+    [contact-form-7_2760] => [CF7] Ohne Titel
+)
+
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Elementor Forms Provider - Checking if active yes
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Elementor Forms Provider - Checking if active yes
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Elementor Forms Provider - Fetching forms
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Elementor Forms Provider - Found posts with Elementor data 57
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_188c5b8c
+    [name] => New Form
+    [post] => export
+)
+
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_78aeab9c
+    [name] => soulsitesKontakt
+    [post] => Startseite 002
+)
+
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_651c49c5
+    [name] => soulsitesKontakt
+    [post] => Angebote - Webdesign
+)
+
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_114d14a4
+    [name] => New Form
+    [post] => Soulsites Blue
+)
+
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_c656213
+    [name] => Neues Formular
+    [post] => Start 2021
+)
+
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_5811953c
+    [name] => Neues Formular
+    [post] => Webdesign Angebot
+)
+
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_1f55eeb0
+    [name] => Neues Formular
+    [post] => Kontakt - Block
+)
+
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_c283505
+    [name] => Neues Formular
+    [post] => Retro
+)
+
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_3e9683b
+    [name] => Neues Formular
+    [post] => Erstelle deine Persona
+)
+
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_7cbe349
+    [name] => Neues Formular
+    [post] => Mini Kurs - Finde die richtigen Texte für deine Angebotsseite
+)
+
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_883abcc
+    [name] => Neues Formular
+    [post] => Neu 2023 Mobile LP
+)
+
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_8b224a4
+    [name] => Neues Formular
+    [post] => Minimal - 2024
+)
+
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_d0fc83f
+    [name] => Neues Formular
+    [post] => Kontakt
+)
+
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_5654569
+    [name] => Neues Formular
+    [post] => Glas
+)
+
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_385b6d5
+    [name] => Neu 5
+    [post] => Kontakt
+)
+
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_0df205e
+    [name] => Neu 4
+    [post] => Elementor kontakt
+)
+
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Elementor Forms Provider - Forms cached in transient
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Got forms from Elementor Forms Array
+(
+    [elementor-forms_188c5b8c] => [Elementor] New Form
+    [elementor-forms_78aeab9c] => [Elementor] soulsitesKontakt
+    [elementor-forms_651c49c5] => [Elementor] soulsitesKontakt
+    [elementor-forms_114d14a4] => [Elementor] New Form
+    [elementor-forms_c656213] => [Elementor] Neues Formular
+    [elementor-forms_5811953c] => [Elementor] Neues Formular
+    [elementor-forms_1f55eeb0] => [Elementor] Neues Formular
+    [elementor-forms_c283505] => [Elementor] Neues Formular
+    [elementor-forms_3e9683b] => [Elementor] Neues Formular
+    [elementor-forms_7cbe349] => [Elementor] Neues Formular
+    [elementor-forms_883abcc] => [Elementor] Neues Formular
+    [elementor-forms_8b224a4] => [Elementor] Neues Formular
+    [elementor-forms_d0fc83f] => [Elementor] Neues Formular
+    [elementor-forms_5654569] => [Elementor] Neues Formular
+    [elementor-forms_385b6d5] => [Elementor] Neu 5
+    [elementor-forms_0df205e] => [Elementor] Neu 4
+)
+
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Ninja Forms Provider - Checking if active yes
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Ninja Forms Provider - Checking if active yes
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Ninja Forms Provider - Fetching forms
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Ninja Forms Provider - Found forms 3
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Ninja Forms Provider - Added form Array
+(
+    [id] => ninja-forms_1
+    [title] => Contact Me
+)
+
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Ninja Forms Provider - Added form Array
+(
+    [id] => ninja-forms_2
+    [title] => Kontakt Test
+)
+
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Ninja Forms Provider - Added form Array
+(
+    [id] => ninja-forms_3
+    [title] => Kontakt 3
+)
+
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Ninja Forms Provider - Forms cached in transient
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Got forms from Ninja Forms Array
+(
+    [ninja-forms_1] => [Ninja] Contact Me
+    [ninja-forms_2] => [Ninja] Kontakt Test
+    [ninja-forms_3] => [Ninja] Kontakt 3
+)
+
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Forms for dropdown Array
+(
+    [] => -- Bitte auswählen --
+    [all] => Alle Formulare
+    [contact-form-7_2759] => [CF7] Kontaktformular 1
+    [contact-form-7_2760] => [CF7] Ohne Titel
+    [elementor-forms_188c5b8c] => [Elementor] New Form
+    [elementor-forms_78aeab9c] => [Elementor] soulsitesKontakt
+    [elementor-forms_651c49c5] => [Elementor] soulsitesKontakt
+    [elementor-forms_114d14a4] => [Elementor] New Form
+    [elementor-forms_c656213] => [Elementor] Neues Formular
+    [elementor-forms_5811953c] => [Elementor] Neues Formular
+    [elementor-forms_1f55eeb0] => [Elementor] Neues Formular
+    [elementor-forms_c283505] => [Elementor] Neues Formular
+    [elementor-forms_3e9683b] => [Elementor] Neues Formular
+    [elementor-forms_7cbe349] => [Elementor] Neues Formular
+    [elementor-forms_883abcc] => [Elementor] Neues Formular
+    [elementor-forms_8b224a4] => [Elementor] Neues Formular
+    [elementor-forms_d0fc83f] => [Elementor] Neues Formular
+    [elementor-forms_5654569] => [Elementor] Neues Formular
+    [elementor-forms_385b6d5] => [Elementor] Neu 5
+    [elementor-forms_0df205e] => [Elementor] Neu 4
+    [ninja-forms_1] => [Ninja] Contact Me
+    [ninja-forms_2] => [Ninja] Kontakt Test
+    [ninja-forms_3] => [Ninja] Kontakt 3
+)
+
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Available fonts Array
+(
+    [helvetica] => Helvetica
+    [arial] => Arial
+    [times] => Times New Roman
+    [courier] => Courier
+    [symbol] => Symbol
+    [zapfdingbats] => ZapfDingbats
+)
+
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Registering Carbon Fields
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Contact Form 7 Provider - Checking if active yes
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Got forms from Contact Form 7 Array
+(
+    [contact-form-7_2759] => [CF7] Kontaktformular 1
+    [contact-form-7_2760] => [CF7] Ohne Titel
+)
+
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Elementor Forms Provider - Checking if active yes
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Got forms from Elementor Forms Array
+(
+    [elementor-forms_188c5b8c] => [Elementor] New Form
+    [elementor-forms_78aeab9c] => [Elementor] soulsitesKontakt
+    [elementor-forms_651c49c5] => [Elementor] soulsitesKontakt
+    [elementor-forms_114d14a4] => [Elementor] New Form
+    [elementor-forms_c656213] => [Elementor] Neues Formular
+    [elementor-forms_5811953c] => [Elementor] Neues Formular
+    [elementor-forms_1f55eeb0] => [Elementor] Neues Formular
+    [elementor-forms_c283505] => [Elementor] Neues Formular
+    [elementor-forms_3e9683b] => [Elementor] Neues Formular
+    [elementor-forms_7cbe349] => [Elementor] Neues Formular
+    [elementor-forms_883abcc] => [Elementor] Neues Formular
+    [elementor-forms_8b224a4] => [Elementor] Neues Formular
+    [elementor-forms_d0fc83f] => [Elementor] Neues Formular
+    [elementor-forms_5654569] => [Elementor] Neues Formular
+    [elementor-forms_385b6d5] => [Elementor] Neu 5
+    [elementor-forms_0df205e] => [Elementor] Neu 4
+)
+
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Ninja Forms Provider - Checking if active yes
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Got forms from Ninja Forms Array
+(
+    [ninja-forms_1] => [Ninja] Contact Me
+    [ninja-forms_2] => [Ninja] Kontakt Test
+    [ninja-forms_3] => [Ninja] Kontakt 3
+)
+
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Forms for dropdown Array
+(
+    [] => -- Bitte auswählen --
+    [all] => Alle Formulare
+    [contact-form-7_2759] => [CF7] Kontaktformular 1
+    [contact-form-7_2760] => [CF7] Ohne Titel
+    [elementor-forms_188c5b8c] => [Elementor] New Form
+    [elementor-forms_78aeab9c] => [Elementor] soulsitesKontakt
+    [elementor-forms_651c49c5] => [Elementor] soulsitesKontakt
+    [elementor-forms_114d14a4] => [Elementor] New Form
+    [elementor-forms_c656213] => [Elementor] Neues Formular
+    [elementor-forms_5811953c] => [Elementor] Neues Formular
+    [elementor-forms_1f55eeb0] => [Elementor] Neues Formular
+    [elementor-forms_c283505] => [Elementor] Neues Formular
+    [elementor-forms_3e9683b] => [Elementor] Neues Formular
+    [elementor-forms_7cbe349] => [Elementor] Neues Formular
+    [elementor-forms_883abcc] => [Elementor] Neues Formular
+    [elementor-forms_8b224a4] => [Elementor] Neues Formular
+    [elementor-forms_d0fc83f] => [Elementor] Neues Formular
+    [elementor-forms_5654569] => [Elementor] Neues Formular
+    [elementor-forms_385b6d5] => [Elementor] Neu 5
+    [elementor-forms_0df205e] => [Elementor] Neu 4
+    [ninja-forms_1] => [Ninja] Contact Me
+    [ninja-forms_2] => [Ninja] Kontakt Test
+    [ninja-forms_3] => [Ninja] Kontakt 3
+)
+
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Available fonts Array
+(
+    [helvetica] => Helvetica
+    [arial] => Arial
+    [times] => Times New Roman
+    [courier] => Courier
+    [symbol] => Symbol
+    [zapfdingbats] => ZapfDingbats
+)
+
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Settings Page constructor complete
+[11-Nov-2024 20:58:53 UTC] PDF Debug: Soulcraft PDF initialization complete
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Initializing Soulcraft PDF
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Setting up directories
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Loading providers
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Provider directory /home/www/redesign/wp-content/plugins/soulcraft-pdf/providers/
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Found provider files Array
+(
+    [0] => /home/www/redesign/wp-content/plugins/soulcraft-pdf/providers/class-cf7-provider.php
+    [1] => /home/www/redesign/wp-content/plugins/soulcraft-pdf/providers/class-elementor-provider.php
+    [2] => /home/www/redesign/wp-content/plugins/soulcraft-pdf/providers/class-ninja-provider.php
+)
+
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Loading provider file class-cf7-provider.php
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Loading provider file class-elementor-provider.php
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Loading provider file class-ninja-provider.php
+[11-Nov-2024 20:58:57 UTC] PDF Debug: PDF Generator initialized
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Contact Form 7 Provider - Checking if active yes
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Contact Form 7 Provider - Initializing provider
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Registered provider: Contact Form 7
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Elementor Forms Provider - Checking if active yes
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Elementor Forms Provider - Initializing provider
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Elementor Forms Provider - Provider initialized with hooks
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Registered provider: Elementor Forms
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Ninja Forms Provider - Checking if active yes
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Ninja Forms Provider - Initializing provider
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Registered provider: Ninja Forms
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Providers loaded
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Settings Page constructor start
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Registering settings fields
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Contact Form 7 Provider - Checking if active yes
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Contact Form 7 Provider - Checking if active yes
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Contact Form 7 Provider - Fetching forms
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Contact Form 7 Provider - Found forms 2
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Contact Form 7 Provider - Added form Array
+(
+    [id] => contact-form-7_2759
+    [title] => Kontaktformular 1
+)
+
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Contact Form 7 Provider - Added form Array
+(
+    [id] => contact-form-7_2760
+    [title] => Ohne Titel
+)
+
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Got forms from Contact Form 7 Array
+(
+    [contact-form-7_2759] => [CF7] Kontaktformular 1
+    [contact-form-7_2760] => [CF7] Ohne Titel
+)
+
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Elementor Forms Provider - Checking if active yes
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Elementor Forms Provider - Checking if active yes
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Elementor Forms Provider - Fetching forms
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Elementor Forms Provider - Found posts with Elementor data 57
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_188c5b8c
+    [name] => New Form
+    [post] => export
+)
+
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_78aeab9c
+    [name] => soulsitesKontakt
+    [post] => Startseite 002
+)
+
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_651c49c5
+    [name] => soulsitesKontakt
+    [post] => Angebote - Webdesign
+)
+
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_114d14a4
+    [name] => New Form
+    [post] => Soulsites Blue
+)
+
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_c656213
+    [name] => Neues Formular
+    [post] => Start 2021
+)
+
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_5811953c
+    [name] => Neues Formular
+    [post] => Webdesign Angebot
+)
+
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_1f55eeb0
+    [name] => Neues Formular
+    [post] => Kontakt - Block
+)
+
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_c283505
+    [name] => Neues Formular
+    [post] => Retro
+)
+
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_3e9683b
+    [name] => Neues Formular
+    [post] => Erstelle deine Persona
+)
+
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_7cbe349
+    [name] => Neues Formular
+    [post] => Mini Kurs - Finde die richtigen Texte für deine Angebotsseite
+)
+
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_883abcc
+    [name] => Neues Formular
+    [post] => Neu 2023 Mobile LP
+)
+
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_8b224a4
+    [name] => Neues Formular
+    [post] => Minimal - 2024
+)
+
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_d0fc83f
+    [name] => Neues Formular
+    [post] => Kontakt
+)
+
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_5654569
+    [name] => Neues Formular
+    [post] => Glas
+)
+
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_385b6d5
+    [name] => Neu 5
+    [post] => Kontakt
+)
+
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Elementor Forms Provider - Found form Array
+(
+    [id] => elementor-forms_0df205e
+    [name] => Neu 4
+    [post] => Elementor kontakt
+)
+
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Elementor Forms Provider - Forms cached in transient
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Got forms from Elementor Forms Array
+(
+    [elementor-forms_188c5b8c] => [Elementor] New Form
+    [elementor-forms_78aeab9c] => [Elementor] soulsitesKontakt
+    [elementor-forms_651c49c5] => [Elementor] soulsitesKontakt
+    [elementor-forms_114d14a4] => [Elementor] New Form
+    [elementor-forms_c656213] => [Elementor] Neues Formular
+    [elementor-forms_5811953c] => [Elementor] Neues Formular
+    [elementor-forms_1f55eeb0] => [Elementor] Neues Formular
+    [elementor-forms_c283505] => [Elementor] Neues Formular
+    [elementor-forms_3e9683b] => [Elementor] Neues Formular
+    [elementor-forms_7cbe349] => [Elementor] Neues Formular
+    [elementor-forms_883abcc] => [Elementor] Neues Formular
+    [elementor-forms_8b224a4] => [Elementor] Neues Formular
+    [elementor-forms_d0fc83f] => [Elementor] Neues Formular
+    [elementor-forms_5654569] => [Elementor] Neues Formular
+    [elementor-forms_385b6d5] => [Elementor] Neu 5
+    [elementor-forms_0df205e] => [Elementor] Neu 4
+)
+
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Ninja Forms Provider - Checking if active yes
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Ninja Forms Provider - Checking if active yes
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Ninja Forms Provider - Fetching forms
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Ninja Forms Provider - Found forms 3
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Ninja Forms Provider - Added form Array
+(
+    [id] => ninja-forms_1
+    [title] => Contact Me
+)
+
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Ninja Forms Provider - Added form Array
+(
+    [id] => ninja-forms_2
+    [title] => Kontakt Test
+)
+
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Ninja Forms Provider - Added form Array
+(
+    [id] => ninja-forms_3
+    [title] => Kontakt 3
+)
+
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Ninja Forms Provider - Forms cached in transient
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Got forms from Ninja Forms Array
+(
+    [ninja-forms_1] => [Ninja] Contact Me
+    [ninja-forms_2] => [Ninja] Kontakt Test
+    [ninja-forms_3] => [Ninja] Kontakt 3
+)
+
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Forms for dropdown Array
+(
+    [] => -- Bitte auswählen --
+    [all] => Alle Formulare
+    [contact-form-7_2759] => [CF7] Kontaktformular 1
+    [contact-form-7_2760] => [CF7] Ohne Titel
+    [elementor-forms_188c5b8c] => [Elementor] New Form
+    [elementor-forms_78aeab9c] => [Elementor] soulsitesKontakt
+    [elementor-forms_651c49c5] => [Elementor] soulsitesKontakt
+    [elementor-forms_114d14a4] => [Elementor] New Form
+    [elementor-forms_c656213] => [Elementor] Neues Formular
+    [elementor-forms_5811953c] => [Elementor] Neues Formular
+    [elementor-forms_1f55eeb0] => [Elementor] Neues Formular
+    [elementor-forms_c283505] => [Elementor] Neues Formular
+    [elementor-forms_3e9683b] => [Elementor] Neues Formular
+    [elementor-forms_7cbe349] => [Elementor] Neues Formular
+    [elementor-forms_883abcc] => [Elementor] Neues Formular
+    [elementor-forms_8b224a4] => [Elementor] Neues Formular
+    [elementor-forms_d0fc83f] => [Elementor] Neues Formular
+    [elementor-forms_5654569] => [Elementor] Neues Formular
+    [elementor-forms_385b6d5] => [Elementor] Neu 5
+    [elementor-forms_0df205e] => [Elementor] Neu 4
+    [ninja-forms_1] => [Ninja] Contact Me
+    [ninja-forms_2] => [Ninja] Kontakt Test
+    [ninja-forms_3] => [Ninja] Kontakt 3
+)
+
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Available fonts Array
+(
+    [helvetica] => Helvetica
+    [arial] => Arial
+    [times] => Times New Roman
+    [courier] => Courier
+    [symbol] => Symbol
+    [zapfdingbats] => ZapfDingbats
+)
+
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Registering Carbon Fields
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Contact Form 7 Provider - Checking if active yes
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Got forms from Contact Form 7 Array
+(
+    [contact-form-7_2759] => [CF7] Kontaktformular 1
+    [contact-form-7_2760] => [CF7] Ohne Titel
+)
+
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Elementor Forms Provider - Checking if active yes
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Got forms from Elementor Forms Array
+(
+    [elementor-forms_188c5b8c] => [Elementor] New Form
+    [elementor-forms_78aeab9c] => [Elementor] soulsitesKontakt
+    [elementor-forms_651c49c5] => [Elementor] soulsitesKontakt
+    [elementor-forms_114d14a4] => [Elementor] New Form
+    [elementor-forms_c656213] => [Elementor] Neues Formular
+    [elementor-forms_5811953c] => [Elementor] Neues Formular
+    [elementor-forms_1f55eeb0] => [Elementor] Neues Formular
+    [elementor-forms_c283505] => [Elementor] Neues Formular
+    [elementor-forms_3e9683b] => [Elementor] Neues Formular
+    [elementor-forms_7cbe349] => [Elementor] Neues Formular
+    [elementor-forms_883abcc] => [Elementor] Neues Formular
+    [elementor-forms_8b224a4] => [Elementor] Neues Formular
+    [elementor-forms_d0fc83f] => [Elementor] Neues Formular
+    [elementor-forms_5654569] => [Elementor] Neues Formular
+    [elementor-forms_385b6d5] => [Elementor] Neu 5
+    [elementor-forms_0df205e] => [Elementor] Neu 4
+)
+
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Ninja Forms Provider - Checking if active yes
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Got forms from Ninja Forms Array
+(
+    [ninja-forms_1] => [Ninja] Contact Me
+    [ninja-forms_2] => [Ninja] Kontakt Test
+    [ninja-forms_3] => [Ninja] Kontakt 3
+)
+
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Forms for dropdown Array
+(
+    [] => -- Bitte auswählen --
+    [all] => Alle Formulare
+    [contact-form-7_2759] => [CF7] Kontaktformular 1
+    [contact-form-7_2760] => [CF7] Ohne Titel
+    [elementor-forms_188c5b8c] => [Elementor] New Form
+    [elementor-forms_78aeab9c] => [Elementor] soulsitesKontakt
+    [elementor-forms_651c49c5] => [Elementor] soulsitesKontakt
+    [elementor-forms_114d14a4] => [Elementor] New Form
+    [elementor-forms_c656213] => [Elementor] Neues Formular
+    [elementor-forms_5811953c] => [Elementor] Neues Formular
+    [elementor-forms_1f55eeb0] => [Elementor] Neues Formular
+    [elementor-forms_c283505] => [Elementor] Neues Formular
+    [elementor-forms_3e9683b] => [Elementor] Neues Formular
+    [elementor-forms_7cbe349] => [Elementor] Neues Formular
+    [elementor-forms_883abcc] => [Elementor] Neues Formular
+    [elementor-forms_8b224a4] => [Elementor] Neues Formular
+    [elementor-forms_d0fc83f] => [Elementor] Neues Formular
+    [elementor-forms_5654569] => [Elementor] Neues Formular
+    [elementor-forms_385b6d5] => [Elementor] Neu 5
+    [elementor-forms_0df205e] => [Elementor] Neu 4
+    [ninja-forms_1] => [Ninja] Contact Me
+    [ninja-forms_2] => [Ninja] Kontakt Test
+    [ninja-forms_3] => [Ninja] Kontakt 3
+)
+
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Available fonts Array
+(
+    [helvetica] => Helvetica
+    [arial] => Arial
+    [times] => Times New Roman
+    [courier] => Courier
+    [symbol] => Symbol
+    [zapfdingbats] => ZapfDingbats
+)
+
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Settings Page constructor complete
+[11-Nov-2024 20:58:57 UTC] PDF Debug: Soulcraft PDF initialization complete

@@ -1,0 +1,23 @@
+{
+    "name": "soulcraft/pdf-generator",
+    "description": "PDF Generator for WordPress Form Plugins",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Christian Wedel",
+            "email": "info@soulsites.de"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "setasign/fpdf": "^1.8",
+        "htmlburger/carbon-fields": "^3.3"
+    },
+    "autoload": {
+        "classmap": [
+            "inc/",
+            "providers/"
+        ]
+    }
+}

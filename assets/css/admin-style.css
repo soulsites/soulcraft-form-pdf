@@ -1,0 +1,248 @@
+/* Material Design M3 Dark Theme Variables */
+:root {
+    /* Primäre Farben */
+    --md-sys-color-primary: #0081a7;
+    --md-sys-color-on-primary: #FFFFFF;
+    --md-sys-color-primary-container: #00afb9;
+    --md-sys-color-on-primary-container: #FFFFFF;
+
+    /* Basis Dark Mode Grautöne */
+    --md-sys-color-background: #121212;
+    --md-sys-color-surface: #1E1E1E;
+    --md-sys-color-surface-variant: #2A2A2A;
+    --md-sys-color-surface-high: #383838;
+    --md-sys-color-surface-higher: #444444;
+
+    /* Text Farben */
+    --md-sys-color-on-surface: #FFFFFF;
+    --md-sys-color-on-surface-medium: rgba(255, 255, 255, 0.8);
+    --md-sys-color-on-surface-muted: rgba(255, 255, 255, 0.6);
+
+    /* Status Farben */
+    --md-sys-color-error: #CF6679;
+    --md-sys-color-success: #03DAC6;
+
+    /* Abstände */
+    --spacing-xs: 4px;
+    --spacing-s: 8px;
+    --spacing-m: 16px;
+    --spacing-l: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 48px;
+}
+
+/* Container Struktur */
+.settings_page_crb_carbon_fields_container_pdf_einstellungen #wpbody {
+
+    margin: auto;
+    padding: 60px;
+    background-color: transparent;
+    color: var(--md-sys-color-surface);
+}
+
+.settings_page_crb_carbon_fields_container_pdf_einstellungen h2 {
+    color: var(--md-sys-color-surface);
+}
+
+.settings_page_crb_carbon_fields_container_pdf_einstellungen #carbon_fields_container_pdf_einstellungen {
+    background: var(--md-sys-color-surface);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: var(--spacing-xxl);
+    border-radius: 8px;
+}
+
+/* Felder Container */
+.settings_page_crb_carbon_fields_container_pdf_einstellungen .cf-container__fields {
+    background: var(--md-sys-color-surface);
+    border-radius: 8px;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Complex/Repeater Felder */
+.settings_page_crb_carbon_fields_container_pdf_einstellungen .cf-complex {
+    background: var(--md-sys-color-surface);
+    color: var(--md-sys-color-on-surface-medium);
+    border-radius: 8px;
+    padding: var(--spacing-l) !important;
+    border: none !important;
+    box-shadow: none;
+}
+
+.settings_page_crb_carbon_fields_container_pdf_einstellungen .cf-field__label {
+    color: var(--md-sys-color-on-surface-medium) !important;
+
+}
+
+/* Repeater Gruppenköpfe */
+.settings_page_crb_carbon_fields_container_pdf_einstellungen .cf-complex__group-head {
+    background-image: linear-gradient(45deg, var(--md-sys-color-primary), var(--md-sys-color-primary-container));
+    color: var(--md-sys-color-on-primary);
+    border-radius: 8px;
+    padding: var(--spacing-s) var(--spacing-l);
+    border: none !important;
+}
+
+.settings_page_crb_carbon_fields_container_pdf_einstellungen .cf-complex__group-action-icon {
+    padding: 4px;
+    color: white;
+    border: 1px solid white !important;
+    border-radius: 4px;
+}
+
+/* Repeater Gruppeninhalte */
+.settings_page_crb_carbon_fields_container_pdf_einstellungen .cf-complex__group-body {
+    background: var(--md-sys-color-surface);
+    border: none !important;
+}
+
+.settings_page_crb_carbon_fields_container_pdf_einstellungen .cf-complex__group-body .cf-field {
+    background: var(--md-sys-color-surface-variant);
+    padding: var(--spacing-l) !important;
+    border: none !important;
+}
+
+/* Labels und Beschreibungen */
+.settings_page_crb_carbon_fields_container_pdf_einstellungen .cf-field__label,
+.settings_page_crb_carbon_fields_container_pdf_einstellungen .cf-field__help {
+    color: var(--md-sys-color-on-surface-medium);
+}
+
+/* Formular Elemente */
+.settings_page_crb_carbon_fields_container_pdf_einstellungen input[type="text"],
+.settings_page_crb_carbon_fields_container_pdf_einstellungen textarea,
+.settings_page_crb_carbon_fields_container_pdf_einstellungen select {
+    background: var(--md-sys-color-surface-high) !important;
+    color: var(--md-sys-color-on-surface-medium) !important;
+    border: none !important;
+    border-radius: 8px;
+    padding: var(--spacing-s) var(--spacing-m);
+}
+
+/* Select Options */
+.settings_page_crb_carbon_fields_container_pdf_einstellungen select option {
+    background: var(--md-sys-color-surface-high);
+    color: var(--md-sys-color-on-surface-medium);
+}
+
+/* Buttons */
+.settings_page_crb_carbon_fields_container_pdf_einstellungen .cf-complex__inserter-button {
+    background: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    border: none;
+    border-radius: 8px;
+    padding: var(--spacing-xs) var(--spacing-m);
+    font-weight: bold;
+    margin-top: var(--spacing-l);
+}
+
+.settings_page_crb_carbon_fields_container_pdf_einstellungen .cf-complex__inserter-button:hover {
+    background: var(--md-sys-color-primary-container);
+}
+
+/* TinyMCE Editor */
+.settings_page_crb_carbon_fields_container_pdf_einstellungen .mce-container,
+.settings_page_crb_carbon_fields_container_pdf_einstellungen .mce-toolbar-grp,
+.settings_page_crb_carbon_fields_container_pdf_einstellungen .mce-top-part::before {
+    background: var(--md-sys-color-surface-higher) !important;
+}
+
+.settings_page_crb_carbon_fields_container_pdf_einstellungen .wp-editor-container {
+    background: transparent;
+    border: 1px solid var(--md-sys-color-surface-high) !important;
+}
+
+.settings_page_crb_carbon_fields_container_pdf_einstellungen .insert-media {
+    background: transparent;
+    border: 1px solid var(--md-sys-color-surface-higher) !important;
+    border-radius: 8px;
+    color: var(--md-sys-color-on-surface-medium) !important;
+}
+
+.settings_page_crb_carbon_fields_container_pdf_einstellungen .mce-listbox {
+    background: var(--md-sys-color-surface-high) !important;
+}
+
+.settings_page_crb_carbon_fields_container_pdf_einstellungen .insert-media:hover {
+    background: var(--md-sys-color-surface) !important;
+    border: 1px solid var(--md-sys-color-surface-higher) !important;
+    border-radius: 8px;
+    color: var(--md-sys-color-on-surface-medium) !important;
+}
+
+.settings_page_crb_carbon_fields_container_pdf_einstellungen .mce-edit-area,
+.settings_page_crb_carbon_fields_container_pdf_einstellungen .wp-editor-area {
+    background: var(--md-sys-color-surface-variant) !important;
+    color: var(--md-sys-color-on-surface-medium) !important;
+    border: none !important;
+}
+
+/* Editor Buttons */
+.settings_page_crb_carbon_fields_container_pdf_einstellungen .wp-switch-editor {
+    background: var(--md-sys-color-surface-variant) !important;
+    color: var(--md-sys-color-on-surface-medium) !important;
+    border: none !important;
+}
+
+.settings_page_crb_carbon_fields_container_pdf_einstellungen .wp-switch-editor.active {
+    background: var(--md-sys-color-surface-high) !important;
+    color: var(--md-sys-color-on-surface) !important;
+}
+
+/* Editor Icons und Buttons */
+.settings_page_crb_carbon_fields_container_pdf_einstellungen .mce-ico,
+.settings_page_crb_carbon_fields_container_pdf_einstellungen .mce-btn button {
+    color: var(--md-sys-color-on-surface-medium) !important;
+}
+
+/* TinyMCE Container Rahmen entfernen */
+.settings_page_crb_carbon_fields_container_pdf_einstellungen .mce-tinymce {
+    border: none !important;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.settings_page_crb_carbon_fields_container_pdf_einstellungen .mce-tinymce iframe {
+    height: 200px !important;
+}
+
+.settings_page_crb_carbon_fields_container_pdf_einstellungen .cf-color__toggle {
+    background: var(--md-sys-color-surface-high) !important;
+    color: var(--md-sys-color-on-surface-medium) !important;
+    border: none !important;
+    border-radius: 8px;
+
+}
+
+/* Editor Content */
+.settings_page_crb_carbon_fields_container_pdf_einstellungen #tinymce,
+.settings_page_crb_carbon_fields_container_pdf_einstellungen .mce-content-body {
+    background: var(--md-sys-color-surface-variant) !important;
+    color: var(--md-sys-color-on-surface-medium) !important;
+}
+
+/* Sonstige Elemente */
+.settings_page_crb_carbon_fields_container_pdf_einstellungen * {
+    border-color: transparent !important;
+}
+
+.settings_page_crb_carbon_fields_container_pdf_einstellungen #submitdiv {
+    background: var(--md-sys-color-surface);
+    color: var(--md-sys-color-on-surface-medium);
+    border-radius: 8px;
+}
+
+.settings_page_crb_carbon_fields_container_pdf_einstellungen #submitdiv h3 {
+    color: var(--md-sys-color-on-surface-medium);
+
+}
+
+.settings_page_crb_carbon_fields_container_pdf_einstellungen #major-publishing-actions {
+    background: var(--md-sys-color-surface);
+    padding: var(--spacing-m);
+}
+
+.settings_page_crb_carbon_fields_container_pdf_einstellungen #submitdiv #publish {
+    background: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-surface-medium);
+}

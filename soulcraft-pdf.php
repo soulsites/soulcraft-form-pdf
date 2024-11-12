@@ -225,6 +225,7 @@ $myUpdateChecker = PucFactory::buildUpdateChecker(
     'soulcraft-form-pdf'
 );
 
+$myUpdateChecker->getVcsApi()->enableReleaseAssets();
 $myUpdateChecker->setBranch('main');
 $myUpdateChecker->debugMode = true;
 

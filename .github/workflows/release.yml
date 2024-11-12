@@ -11,23 +11,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Create plugin artifact
+      - name: Build plugin ZIP
         run: |
-          # Erstelle temporären Ordner
-          mkdir tmp-plugin
-          
-          # Kopiere alles außer .git und .github in den Plugin-Ordner
-          rsync -r \
-            --exclude='.git' \
-            --exclude='.github' \
-            --exclude='tmp-plugin' \
-            . "tmp-plugin/soulcraft-form-pdf"
-          
-          # Erstelle ZIP mit korrektem Ordnernamen
-          cd tmp-plugin
-          zip -r ../soulcraft-form-pdf.zip soulcraft-form-pdf
+          mkdir build
+          cp -r * build/
+          rm -rf build/.git build/.github
+          cd build
+          zip -r ../soulcraft-form-pdf.zip .
+          cd ..
 
-      - name: Upload Release Asset
+      - name: Upload to release
         uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
         with:
           files: soulcraft-form-pdf.zip

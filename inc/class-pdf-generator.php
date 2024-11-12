@@ -177,11 +177,6 @@ class PDF_Generator extends FPDF {
 
     private function generate_fields($fields) {
         $this->SetTextColor(0, 0, 0);
-        $this->SetFont($this->current_settings['font'], '', $this->current_settings['font_size']);
-        $line_spacing = floatval($this->current_settings['line_spacing']);
-
-        $label_width = 60;
-        $content_width = $this->GetPageWidth() - $this->lMargin - $this->rMargin - $label_width;
 
         foreach ($fields as $field) {
             // Überspringe leere Felder, aber NICHT Checkboxen
@@ -189,48 +184,35 @@ class PDF_Generator extends FPDF {
 
             // Spezielle Behandlung für Checkboxen
             if ($field['type'] === 'checkbox') {
-                $value = $field['value'] ? '☒' : '☐';  // Alternative Checkbox Zeichen
+                $value = $field['value'] ? '☒' : '☐';
             } else {
                 $value = is_array($field['value']) ? implode(', ', $field['value']) : $field['value'];
             }
 
-            // Startposition speichern
-            $start_y = $this->GetY();
-            $current_x = $this->GetX();
+            // Label in fett und etwas kleiner
+            $this->SetFont($this->current_settings['font'], 'B', $this->current_settings['font_size'] - 1);
+            $this->Write(6, $field['label']);
+            $this->Ln(8); // Abstand nach Label
 
-            // Label vorbereiten und Höhe berechnen
-            $this->SetFont($this->current_settings['font'], 'B', $this->current_settings['font_size']);
-            $label_text = $field['label'] . ':';
-            $label_lines = $this->getNumLines($label_text, $label_width);
-            $label_height = $label_lines * 6 * $line_spacing;
-
-            // Label drucken
-            $this->MultiCell($label_width, 6, $label_text, 0, 'L');
-
-            // Position für den Wert setzen
-            $this->SetXY($current_x + $label_width, $start_y);
-
-            // Wert drucken
+            // Wert in normal
             $this->SetFont($this->current_settings['font'], '', $this->current_settings['font_size']);
 
+            // HTML-Felder speziell behandeln
             if ($field['type'] === 'html') {
                 $value = $this->clean_html($value);
             }
 
-            // Wert drucken und Höhe berechnen
+            // Wert ausgeben
             $this->MultiCell(
-                $content_width,
+                $this->GetPageWidth() - $this->lMargin - $this->rMargin, // Volle Breite
                 6,
                 $value,
                 0,
                 'L'
             );
 
-            $value_lines = $this->getNumLines($value, $content_width);
-            $value_height = $value_lines * 6 * $line_spacing;
-
-            // Zur höheren der beiden Positionen springen
-            $this->SetY($start_y + max($label_height, $value_height) + 2);
+            // Leerzeile zwischen den Feldern
+            $this->Ln(10);
         }
     }
 

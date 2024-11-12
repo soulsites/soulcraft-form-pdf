@@ -2,7 +2,11 @@ name: Create Release ZIP
 
 on:
   release:
-    types: [published]
+    types: [published, created, released]
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
 
 jobs:
   build:
@@ -10,25 +14,24 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v2
-      
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Debug Info
+        run: |
+          echo "Event name: ${{ github.event_name }}"
+          echo "Event type: ${{ github.event.action }}"
+          echo "Reference: ${{ github.ref }}"
+
       - name: Create ZIP
         run: |
-          # Erstelle temporären Build-Ordner
-          mkdir build
-          mkdir build/soulcraft-form-pdf
-          
-          # Kopiere alle Dateien in den Plugin-Ordner
+          mkdir -p build/soulcraft-form-pdf
           cp -r * build/soulcraft-form-pdf/ || true
-          
-          # Entferne nicht benötigte Dateien/Ordner
           rm -rf build/soulcraft-form-pdf/.git build/soulcraft-form-pdf/.github build/soulcraft-form-pdf/build
-          
-          # Erstelle ZIP
           cd build
           zip -r ../soulcraft-form-pdf.zip soulcraft-form-pdf
           cd ..
-          
+
       - name: Upload to Release
         uses: softprops/action-gh-release@v1
         with:

@@ -79,7 +79,7 @@ class PDF_Generator extends FPDF {
         return true;
     }
 
-    private function load_settings($form_data) {
+    private function load_settings(array $form_data): void {
         pdf_debug('Loading settings for form', $form_data['form_id']);
 
         // Default settings
@@ -108,11 +108,11 @@ class PDF_Generator extends FPDF {
         pdf_debug('Loaded settings', $this->current_settings);
     }
 
-    protected function normalize_text($text) {
+    protected function normalize_text(string $text): string {
         try {
             // Zuerst sicherstellen, dass wir UTF-8 haben
             if (!mb_check_encoding($text, 'UTF-8')) {
-                $text = utf8_encode($text);
+                $text = mb_convert_encoding($text, 'UTF-8', 'ISO-8859-1');
             }
 
             // Windows-1252 für FPDF
@@ -146,7 +146,7 @@ class PDF_Generator extends FPDF {
         parent::SetFont($family, $style, $size);
     }
 
-    private function generate_content($form_data) {
+    private function generate_content(array $form_data): void {
         // Set background color
         $this->set_background_color($this->current_settings['background_color']);
 
@@ -175,7 +175,7 @@ class PDF_Generator extends FPDF {
 
     }
 
-    private function generate_fields($fields) {
+    private function generate_fields(array $fields): void {
         $this->SetTextColor(0, 0, 0);
 
         foreach ($fields as $field) {
@@ -258,7 +258,7 @@ class PDF_Generator extends FPDF {
         }
     }
 
-    private function add_metadata($form_data) {
+    private function add_metadata(array $form_data): void {
         pdf_debug('Adding metadata');
 
         $this->Ln(10);
@@ -300,7 +300,7 @@ class PDF_Generator extends FPDF {
     }
 
 
-    private function save_pdf() {
+    private function save_pdf(): string {
         pdf_debug('Saving PDF');
 
         try {
@@ -339,12 +339,12 @@ class PDF_Generator extends FPDF {
         }
     }
 
-    private function secure_directory($dir) {
+    private function secure_directory(string $dir): void {
         $htaccess = $dir . '/.htaccess';
-        $index = $dir . '/index.php';
+        $index    = $dir . '/index.php';
 
         if (!file_exists($htaccess)) {
-            file_put_contents($htaccess, "Order deny,allow\nDeny from all");
+            file_put_contents($htaccess, 'Require all denied');
         }
 
         if (!file_exists($index)) {
@@ -352,12 +352,12 @@ class PDF_Generator extends FPDF {
         }
     }
 
-    private function set_background_color($hex) {
+    private function set_background_color(string $hex): void {
         $rgb = $this->hex2rgb($hex);
         $this->SetFillColor($rgb['r'], $rgb['g'], $rgb['b']);
     }
 
-    private function hex2rgb($hex) {
+    private function hex2rgb(string $hex): array {
         $hex = str_replace('#', '', $hex);
 
         if(strlen($hex) == 3) {
@@ -371,12 +371,12 @@ class PDF_Generator extends FPDF {
         ];
     }
 
-    private function isHTML($string) {
+    private function isHTML(string $string): bool {
         return $string != strip_tags($string);
     }
 
 // Neue Methode speziell für HTML-Felder
-    private function write_html_field($html, $width, $start_y) {
+    private function write_html_field(string $html, float $width, float $start_y): void {
         // HTML bereinigen und formatieren
         $html = $this->clean_html($html);
 
@@ -395,10 +395,10 @@ class PDF_Generator extends FPDF {
     }
 
 // Neue Methode zur HTML-Bereinigung und Formatierung
-    private function clean_html($html) {
+    private function clean_html(string $html): string {
         // UTF-8 Kodierung korrigieren
         if (!mb_check_encoding($html, 'UTF-8')) {
-            $html = utf8_encode($html);
+            $html = mb_convert_encoding($html, 'UTF-8', 'ISO-8859-1');
         }
 
         // Formatierung behalten
@@ -442,7 +442,7 @@ class PDF_Generator extends FPDF {
 
 
 // Verbesserte write_html Methode
-    private function write_html($html) {
+    private function write_html(string $html): void {
         pdf_debug('Writing HTML content');
 
         try {
@@ -473,7 +473,7 @@ class PDF_Generator extends FPDF {
     }
 
 
-    private function getNumLines($text, $width) {
+    private function getNumLines(string $text, float $width): int {
         $this->SetFont($this->current_settings['font'], '', $this->current_settings['font_size']);
 
         // Wenn der Text Zeilenumbrüche enthält
@@ -529,7 +529,7 @@ class PDF_Generator extends FPDF {
         }
     }
 
-    private function cleanup_directory($dir, $cutoff) {
+    private function cleanup_directory(string $dir, int $cutoff): void {
         $files = glob($dir . '/*');
 
         foreach ($files as $file) {

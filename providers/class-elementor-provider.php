@@ -358,27 +358,5 @@ class Elementor_Provider extends PDF_Base {
         return $message;
     }
 
-    private function get_form_settings($form_id): ?array {
-        $all_settings = carbon_get_theme_option('pdf_form_settings');
-        if (!is_array($all_settings)) {
-            return null;
-        }
-
-        // Erst nach exaktem Match suchen
-        foreach ($all_settings as $settings) {
-            if ($settings['form_id'] === $form_id) {
-                return $settings;
-            }
-        }
-
-        // Dann nach "all" suchen
-        foreach ($all_settings as $settings) {
-            if ($settings['form_id'] === 'all') {
-                return $settings;
-            }
-        }
-
-        return null;
-    }
 }
 

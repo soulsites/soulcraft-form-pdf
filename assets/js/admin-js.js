@@ -172,8 +172,8 @@ jQuery(document).ready(function(jQuery) {
     function showNotice(type, message) {
         const noticeClass = type === 'error' ? 'notice-error' : 'notice-success';
         const notice = jQuery(`
-           <div class="notice jQuery{noticeClass} is-dismissible">
-               <p>jQuery{message}</p>
+           <div class="notice ${noticeClass} is-dismissible">
+               <p>${message}</p>
                <button type="button" class="notice-dismiss">
                    <span class="screen-reader-text">Dismiss this notice.</span>
                </button>
@@ -220,7 +220,7 @@ jQuery(document).ready(function(jQuery) {
     // Debug Helper
     function pdf_debug(message, data = null) {
         if (window.console && window.console.log) {
-            const debugMessage = data ? `PDF Debug: jQuery{message} - jQuery{JSON.stringify(data)}` : `PDF Debug: jQuery{message}`;
+            const debugMessage = data ? `PDF Debug: ${message} - ${JSON.stringify(data)}` : `PDF Debug: ${message}`;
             console.log(debugMessage);
         }
     }

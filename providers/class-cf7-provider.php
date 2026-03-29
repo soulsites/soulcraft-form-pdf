@@ -27,10 +27,10 @@ class CF7_Provider extends PDF_Base {
 
         try {
             $args = [
-                'post_type' => 'wpcf7_contact_form',
+                'post_type'      => 'wpcf7_contact_form',
                 'posts_per_page' => -1,
-                'orderby' => 'title',
-                'order' => 'ASC',
+                'orderby'        => 'title',
+                'order'          => 'ASC',
             ];
 
             $cf7_forms = get_posts($args);
@@ -40,8 +40,8 @@ class CF7_Provider extends PDF_Base {
                 $form_id = $this->id_prefix . $form->ID;
                 $forms[$form_id] = '[CF7] ' . $form->post_title;
                 $this->log('Added form', [
-                    'id' => $form_id,
-                    'title' => $form->post_title
+                    'id'    => $form_id,
+                    'title' => $form->post_title,
                 ]);
             }
         } catch (Exception $e) {
@@ -51,7 +51,7 @@ class CF7_Provider extends PDF_Base {
         return $forms;
     }
 
-    public function handle_form_submission($cf7) {
+    public function handle_form_submission($cf7): void {
         $this->log('Processing form submission', $cf7->id());
 
         try {
@@ -70,11 +70,18 @@ class CF7_Provider extends PDF_Base {
 
             $pdf_data = $this->prepare_submission_data([
                 'form' => $cf7,
-                'data' => $posted_data
+                'data' => $posted_data,
             ]);
 
-            $result = parent::handle_submission($pdf_data);
-            $this->log('PDF generation result', $result ? 'success' : 'failed');
+            $pdf_path = $this->pdf_generator->generate($pdf_data);
+
+            if (!$pdf_path || !file_exists($pdf_path)) {
+                $this->log('PDF generation failed');
+                return;
+            }
+
+            $this->log('PDF generated at: ' . $pdf_path);
+            $this->send_pdf_emails($pdf_path, $pdf_data);
 
         } catch (Exception $e) {
             $this->log('Error processing submission', $e->getMessage());
@@ -84,14 +91,14 @@ class CF7_Provider extends PDF_Base {
     protected function prepare_submission_data($raw_data): array {
         $this->log('Preparing submission data');
 
-        $cf7 = $raw_data['form'];
+        $cf7         = $raw_data['form'];
         $posted_data = $raw_data['data'];
-        $form_tags = $cf7->scan_form_tags();
+        $form_tags   = $cf7->scan_form_tags();
 
         $fields = [];
         foreach ($form_tags as $tag) {
             // Überspringe Submit-Buttons und versteckte Felder
-            if (in_array($tag['type'], ['submit', 'hidden'])) {
+            if (in_array($tag['type'], ['submit', 'hidden'], true)) {
                 continue;
             }
 
@@ -118,19 +125,90 @@ class CF7_Provider extends PDF_Base {
             $fields[] = [
                 'label' => $tag['name'],
                 'value' => $field_value,
-                'type' => $field_type
+                'type'  => $field_type,
             ];
         }
 
+        $form_id     = $this->id_prefix . $cf7->id();
+        $pdf_settings = $this->get_form_settings($form_id);
+
         return [
-            'form_id' => $this->id_prefix . $cf7->id(),
-            'title' => get_the_title($cf7->id()),
-            'fields' => $fields,
+            'form_id'  => $form_id,
+            'title'    => $pdf_settings['pdf_title'] ?? get_the_title($cf7->id()),
+            'fields'   => $fields,
+            'settings' => $pdf_settings ?? [],
             'metadata' => [
                 'timestamp' => current_time('mysql'),
                 'form_type' => 'contact-form-7',
-                'site_url' => get_site_url()
-            ]
+                'site_url'  => get_site_url(),
+            ],
         ];
+    }
+
+    private function send_pdf_emails(string $pdf_path, array $pdf_data): void {
+        $settings = $pdf_data['settings'] ?? null;
+        if (!$settings) {
+            $this->log('No settings found for email sending');
+            return;
+        }
+
+        $recipients = [];
+
+        // Standard-Admin-E-Mail wenn "form_recipient" gewählt
+        if (!empty($settings['pdf_email_recipients']) &&
+            in_array('form_recipient', $settings['pdf_email_recipients'], true)) {
+            $recipients[] = get_option('admin_email');
+        }
+
+        // E-Mail aus Formularfeld
+        if (!empty($settings['pdf_email_recipients']) &&
+            in_array('form_email', $settings['pdf_email_recipients'], true)) {
+            foreach ($pdf_data['fields'] as $field) {
+                if ($field['type'] === 'email' && !empty($field['value'])) {
+                    $recipients[] = $field['value'];
+                    break;
+                }
+            }
+        }
+
+        // Benutzerdefinierte E-Mail-Adressen
+        if (!empty($settings['pdf_email_recipients']) &&
+            in_array('custom_email', $settings['pdf_email_recipients'], true) &&
+            !empty($settings['pdf_custom_email'])) {
+            $custom_emails = array_map('trim', explode(',', $settings['pdf_custom_email']));
+            $recipients    = array_merge($recipients, $custom_emails);
+        }
+
+        $recipients = array_unique(array_filter($recipients));
+
+        $this->log('Final recipients list', $recipients);
+
+        if (empty($recipients)) {
+            $this->log('No recipients found for PDF email');
+            return;
+        }
+
+        $subject = sprintf('PDF Formular: %s', $settings['pdf_title'] ?? 'Formulareinreichung');
+        $message = '<h2>' . esc_html($settings['pdf_title'] ?? 'Formulareinreichung') . "</h2>\n\n";
+        $message .= "<p>Anbei finden Sie die PDF-Version des ausgefüllten Formulars.</p>\n\n";
+        $message .= "<h3>Eingegebene Daten:</h3>\n<ul>\n";
+
+        foreach ($pdf_data['fields'] as $field) {
+            if (!empty($field['value'])) {
+                $message .= sprintf(
+                    "<li><strong>%s:</strong> %s</li>\n",
+                    esc_html($field['label']),
+                    esc_html(is_array($field['value']) ? implode(', ', $field['value']) : $field['value'])
+                );
+            }
+        }
+
+        $message .= "</ul>\n";
+        $headers = ['Content-Type: text/html; charset=UTF-8'];
+
+        foreach ($recipients as $to) {
+            $mail_sent = wp_mail($to, $subject, $message, $headers, [$pdf_path]);
+            $this->log('Mail sent to ' . $to, $mail_sent ? 'success' : 'failed');
+        }
     }
 }

@@ -4,19 +4,19 @@
  * Handles font installation and management for the PDF Generator
  */
 class Font_Manager {
-    private const FONTS_DIR = SOULCRAFT_PDF_PATH . 'fonts/';
+    private const FONTS_DIR        = SOULCRAFT_PDF_PATH . 'fonts/';
     private const GOOGLE_FONTS_DIR = self::FONTS_DIR . 'google/';
 
-    private $installed_fonts = [];
+    private array $installed_fonts = [];
 
     public function __construct() {
         $this->setup_directories();
         $this->scan_installed_fonts();
-        error_log('PDF Debug: Font Manager initialized');
-        error_log('PDF Debug: Google Fonts Directory: ' . self::GOOGLE_FONTS_DIR);
+        pdf_debug('Font Manager initialized');
+        pdf_debug('Google Fonts Directory: ' . self::GOOGLE_FONTS_DIR);
     }
 
-    private function register_ttf_font($font_file) {
+    private function register_ttf_font(string $font_file): array {
         $font_name = strtolower(pathinfo($font_file, PATHINFO_FILENAME));
 
         // Generiere die Font-Definition wenn sie nicht existiert
@@ -27,13 +27,13 @@ class Font_Manager {
         }
 
         return [
-            'font_file' => $font_file,
+            'font_file'       => $font_file,
             'font_definition' => $font_definition,
-            'name' => $font_name
+            'name'            => $font_name,
         ];
     }
 
-    private function setup_directories() {
+    private function setup_directories(): void {
         // Erstelle Verzeichnisse falls sie nicht existieren
         wp_mkdir_p(self::FONTS_DIR);
         wp_mkdir_p(self::GOOGLE_FONTS_DIR);
@@ -41,7 +41,7 @@ class Font_Manager {
         // Sichere die Verzeichnisse
         $htaccess = self::FONTS_DIR . '.htaccess';
         if (!file_exists($htaccess)) {
-            file_put_contents($htaccess, "Order deny,allow\nDeny from all");
+            file_put_contents($htaccess, 'Require all denied');
         }
 
         $index = self::FONTS_DIR . 'index.php';
@@ -50,14 +50,14 @@ class Font_Manager {
         }
     }
 
-    private function scan_installed_fonts() {
+    private function scan_installed_fonts(): void {
         if (!is_dir(self::GOOGLE_FONTS_DIR)) {
-            error_log('PDF Debug: Google Fonts directory not found');
+            pdf_debug('Google Fonts directory not found');
             return;
         }
 
         $files = glob(self::GOOGLE_FONTS_DIR . '*.{ttf,otf}', GLOB_BRACE);
-        error_log('PDF Debug: Found font files: ' . print_r($files, true));
+        pdf_debug('Found font files', $files);
 
         foreach ($files as $file) {
             $font_info = $this->get_font_info($file);
@@ -65,15 +65,15 @@ class Font_Manager {
                 $family = strtolower($font_info['family']);
                 if (!isset($this->installed_fonts[$family])) {
                     $this->installed_fonts[$family] = $font_info;
-                    error_log('PDF Debug: Registered font: ' . $family);
+                    pdf_debug('Registered font: ' . $family);
                 }
             }
         }
 
-        error_log('PDF Debug: Installed fonts: ' . print_r($this->installed_fonts, true));
+        pdf_debug('Installed fonts', $this->installed_fonts);
     }
 
-    private function get_font_info($file_path) {
+    private function get_font_info(string $file_path): array|false {
         try {
             $filename = basename($file_path);
 
@@ -85,25 +85,25 @@ class Font_Manager {
             // Konvertiere zu Title Case
             $family = ucwords($family);
 
-            error_log('PDF Debug: Processing font: ' . $filename . ' as family: ' . $family);
+            pdf_debug('Processing font: ' . $filename . ' as family: ' . $family);
 
             return [
-                'family' => $family,
-                'name' => $family,
+                'family'    => $family,
+                'name'      => $family,
                 'file_path' => $file_path,
-                'type' => 'TTF',
-                'styles' => ['regular'], // Standardmäßig nur regular Style
-                'variants' => [
-                    'regular' => $file_path
-                ]
+                'type'      => 'TTF',
+                'styles'    => ['regular'],
+                'variants'  => [
+                    'regular' => $file_path,
+                ],
             ];
         } catch (Exception $e) {
-            error_log('PDF Debug: Error processing font file: ' . $e->getMessage());
+            pdf_debug('Error processing font file: ' . $e->getMessage());
             return false;
         }
     }
 
-    public function get_available_fonts() {
+    public function get_available_fonts(): array {
         // Kombiniere Standard- und installierte Fonts
         $fonts = PDF_Generator::get_standard_fonts();
 
@@ -111,11 +111,11 @@ class Font_Manager {
             $fonts[$key] = $font['name'];
         }
 
-        error_log('PDF Debug: Available fonts: ' . print_r($fonts, true));
+        pdf_debug('Available fonts', $fonts);
         return $fonts;
     }
 
-    public function get_font_path($family) {
+    public function get_font_path(string $family): string|false {
         $family = strtolower($family);
         if (isset($this->installed_fonts[$family])) {
             return $this->installed_fonts[$family]['file_path'];
@@ -123,14 +123,14 @@ class Font_Manager {
         return false;
     }
 
-    public function is_ttf_font($family) {
+    public function is_ttf_font(string $family): bool {
         $family = strtolower($family);
         return isset($this->installed_fonts[$family]) &&
             isset($this->installed_fonts[$family]['type']) &&
             $this->installed_fonts[$family]['type'] === 'TTF';
     }
 
-    public function get_font_info_by_family($family) {
+    public function get_font_info_by_family(string $family): array|false {
         $family = strtolower($family);
         if (isset($this->installed_fonts[$family])) {
             return $this->installed_fonts[$family];
@@ -138,7 +138,7 @@ class Font_Manager {
         return false;
     }
 
-    public function install_google_font($font_family) {
+    public function install_google_font(string $font_family): bool {
         try {
             // Google Fonts API URL
             $api_url = sprintf(
@@ -149,8 +149,8 @@ class Font_Manager {
             // Hole CSS mit Font-Face Definitionen
             $response = wp_remote_get($api_url, [
                 'headers' => [
-                    'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-                ]
+                    'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+                ],
             ]);
 
             if (is_wp_error($response)) {
@@ -175,9 +175,9 @@ class Font_Manager {
                     continue;
                 }
 
-                $font_content = wp_remote_retrieve_body($font_data);
+                $font_content  = wp_remote_retrieve_body($font_data);
                 $font_filename = basename($font_url);
-                $font_path = self::GOOGLE_FONTS_DIR . sanitize_file_name($font_family . '-' . $font_filename);
+                $font_path     = self::GOOGLE_FONTS_DIR . sanitize_file_name($font_family . '-' . $font_filename);
 
                 if (file_put_contents($font_path, $font_content)) {
                     $installed_files[] = $font_path;
@@ -194,21 +194,21 @@ class Font_Manager {
             return true;
 
         } catch (Exception $e) {
-            error_log('PDF Debug: Font installation error - ' . $e->getMessage());
+            pdf_debug('Font installation error - ' . $e->getMessage());
             return false;
         }
     }
 
-    public function get_installed_fonts() {
+    public function get_installed_fonts(): array {
         return $this->installed_fonts;
     }
 
-    public function clear_cache() {
+    public function clear_cache(): void {
         $this->installed_fonts = [];
         $this->scan_installed_fonts();
     }
 
-    public function get_font_styles($family) {
+    public function get_font_styles(string $family): array {
         $family = strtolower($family);
         if (isset($this->installed_fonts[$family]['styles'])) {
             return $this->installed_fonts[$family]['styles'];
@@ -216,7 +216,7 @@ class Font_Manager {
         return ['regular'];
     }
 
-    public function get_font_variants($family) {
+    public function get_font_variants(string $family): array {
         $family = strtolower($family);
         if (isset($this->installed_fonts[$family]['variants'])) {
             return $this->installed_fonts[$family]['variants'];

@@ -347,32 +347,6 @@ class Ninja_Provider extends PDF_Base {
         }
     }
 
-    private function get_form_settings($form_id): ?array {
-        $all_settings = carbon_get_theme_option('pdf_form_settings');
-        if (!is_array($all_settings)) {
-            return null;
-        }
-
-        // Erst nach exaktem Match suchen
-        foreach ($all_settings as $settings) {
-            if ($settings['form_id'] === $form_id) {
-                pdf_debug('Found specific form settings for: ' . $form_id);
-                return $settings;
-            }
-        }
-
-        // Dann nach "all" suchen
-        foreach ($all_settings as $settings) {
-            if ($settings['form_id'] === 'all') {
-                pdf_debug('Using "all" form settings for: ' . $form_id);
-                return $settings;
-            }
-        }
-
-        pdf_debug('No settings found for form: ' . $form_id);
-        return null;
-    }
-
     public function clear_cache(): void {
         parent::clear_cache();
         delete_transient(self::CACHE_KEY);

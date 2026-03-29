@@ -9,7 +9,7 @@ class Settings_Page {
     private $registry;
     private $font_manager;
 
-    public function __construct($registry) {
+    public function __construct(Form_Registry $registry) {
         pdf_debug('Settings Page constructor start');
 
         $this->registry = $registry;
@@ -277,17 +277,12 @@ class Settings_Page {
         $log_content = '';
 
         if (file_exists($debug_log_path)) {
-            // Nur die letzten 1000 Zeilen laden
-            $log_content = shell_exec('tail -n 1000 ' . escapeshellarg($debug_log_path));
-
-            // Fallback wenn shell_exec nicht verfügbar
-            if ($log_content === null) {
-                $log_content = file_get_contents($debug_log_path);
-            }
+            // Letzten 1000 Zeilen in reinem PHP lesen
+            $all_lines   = file($debug_log_path, FILE_IGNORE_NEW_LINES);
+            $last_lines  = $all_lines !== false ? array_slice($all_lines, -1000) : [];
 
             // Auf PDF-relevante Einträge filtern
-            $log_lines = explode("\n", $log_content);
-            $pdf_logs = array_filter($log_lines, function($line) {
+            $pdf_logs    = array_filter($last_lines, static function (string $line): bool {
                 return strpos($line, 'PDF Debug:') !== false;
             });
             $log_content = implode("\n", $pdf_logs);
@@ -415,7 +410,7 @@ class Settings_Page {
     /**
      * Creates sample data for PDF preview
      */
-    private function create_sample_data($form_id, $settings): array {
+    private function create_sample_data(string $form_id, array $settings): array {
         // Provider-Typ aus der Form-ID extrahieren
         $provider_type = explode('_', $form_id)[0] ?? '';
 
@@ -468,7 +463,7 @@ class Settings_Page {
     /**
      * Gets form settings for a specific form
      */
-    private function get_form_settings($form_id): ?array {
+    private function get_form_settings(string $form_id): ?array {
         $all_settings = carbon_get_theme_option('pdf_form_settings');
         if (!is_array($all_settings)) {
             return null;

@@ -195,7 +195,7 @@ class Soulcraft_PDF {
         // Secure the directory
         $htaccess_file = $pdf_dir . '/.htaccess';
         if (!file_exists($htaccess_file)) {
-            file_put_contents($htaccess_file, "Order deny,allow\nDeny from all");
+            file_put_contents($htaccess_file, "Require all denied");
             pdf_debug('Created .htaccess file');
         }
 
@@ -227,7 +227,10 @@ $myUpdateChecker = PucFactory::buildUpdateChecker(
 
 $myUpdateChecker->getVcsApi()->enableReleaseAssets();
 $myUpdateChecker->setBranch('main');
-$myUpdateChecker->debugMode = true;
+$myUpdateChecker->debugMode = false;
 
-// Für private Repositories
-$myUpdateChecker->setAuthentication('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');
+// Für private Repositories: Token in wp-config.php als Konstante definieren:
+// define('SOULCRAFT_PDF_GITHUB_TOKEN', 'ghp_...');
+if (defined('SOULCRAFT_PDF_GITHUB_TOKEN')) {
+    $myUpdateChecker->setAuthentication(SOULCRAFT_PDF_GITHUB_TOKEN);
+}

@@ -106,6 +106,34 @@ abstract class PDF_Base {
     }
 
     /**
+     * Gibt die PDF-Einstellungen für ein bestimmtes Formular zurück.
+     * Sucht zuerst nach einem exakten Match, dann nach "alle Formulare".
+     */
+    protected function get_form_settings(string $form_id): ?array {
+        $all_settings = carbon_get_theme_option('pdf_form_settings');
+        if (!is_array($all_settings)) {
+            return null;
+        }
+
+        foreach ($all_settings as $settings) {
+            if ($settings['form_id'] === $form_id) {
+                $this->log('Found specific form settings for: ' . $form_id);
+                return $settings;
+            }
+        }
+
+        foreach ($all_settings as $settings) {
+            if ($settings['form_id'] === 'all') {
+                $this->log('Using "all" form settings for: ' . $form_id);
+                return $settings;
+            }
+        }
+
+        $this->log('No settings found for form: ' . $form_id);
+        return null;
+    }
+
+    /**
      * Logging-Hilfsmethode für Provider
      */
     protected function log($message, $data = null): void {

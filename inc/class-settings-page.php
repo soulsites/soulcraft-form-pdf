@@ -13,6 +13,7 @@ class Settings_Page {
         pdf_debug('Settings Page constructor start');
 
         $this->registry = $registry;
+        $this->font_manager = new Font_Manager();
 
         // Register fields right away
         $this->register_fields();

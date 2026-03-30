@@ -1,50 +1,54 @@
 name: Create Release ZIP
 on:
-  workflow_dispatch:    # Ermöglicht manuelle Ausführung
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version tag (e.g. v1.0.1)'
+        required: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          tools: composer
+
+      - name: Install Composer dependencies (no dev)
+        run: composer install --no-dev --optimize-autoloader --no-interaction
 
       - name: Prepare plugin folder
         run: |
-          # Erstelle den Hauptordner mit festem Namen
           mkdir -p release/soulcraft-form-pdf
-          
-          # Kopiere alle Dateien außer `.git` und `.github` in diesen Ordner
+
           rsync -a \
             --exclude='.git' \
             --exclude='.github' \
+            --exclude='.idea' \
             --exclude='node_modules' \
             --exclude='.gitignore' \
+            --exclude='.gitattributes' \
             --exclude='README.md' \
+            --exclude='composer.lock' \
             . release/soulcraft-form-pdf
 
       - name: Create ZIP file
         run: |
           cd release
           zip -r ../soulcraft-form-pdf.zip soulcraft-form-pdf
-          
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create Release and upload asset
+        uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ github.run_number }}
-          release_name: Release ${{ github.run_number }}
+          tag_name: ${{ github.event.inputs.version }}
+          name: Release ${{ github.event.inputs.version }}
           draft: false
           prerelease: false
-          
-      - name: Upload Release Asset
-        uses: actions/upload-release-asset@v1
+          files: soulcraft-form-pdf.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./soulcraft-form-pdf.zip
-          asset_name: soulcraft-form-pdf.zip
-          asset_content_type: application/zip

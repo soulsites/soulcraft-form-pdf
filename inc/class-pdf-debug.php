@@ -45,10 +45,7 @@ class PDF_Debug {
      * Loggt eine Nachricht, wenn Debug aktiviert ist
      */
     public function log($message, $data = null): void {
-        // Immer loggen während der Initialisierung
-        $always_log = !$this->fields_registered;
-
-        if (!$always_log && !$this->is_debug_enabled()) {
+        if (!$this->is_debug_enabled()) {
             return;
         }
 
